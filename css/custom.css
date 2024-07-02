@@ -1,0 +1,927 @@
+@font-face {
+  font-family: "Bauziet Norm";
+  src: url("../fonts/Bauziet-Norm-Bold.ttf");
+  font-weight: 700;
+  font-style: bold;
+}
+
+.container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  /* width: 88%;
+  max-width: 1440px !important; */
+}
+a {
+  color: #000;
+}
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.nav {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.justify-content-start p {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 200;
+  /* width: 43%; */
+}
+.spacer {
+  display: block;
+  /* height: 150px; */
+}
+/* Crafting */
+.crafting h1 {
+ 
+  font-weight: 700;
+  line-height: 72px;
+  font-family: inherit;
+  padding-bottom: 22px;
+}
+
+.black-bg {
+  display: block;
+  width: 986px;
+  height: 16px;
+  background-color: #000;
+  position: relative;
+  top: -8px;
+  margin: 0 auto;
+}
+/* services */
+.service {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: inherit;
+  text-transform: uppercase;
+  margin-bottom: 64px;
+}
+.service > h2 {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  color: #000;
+}
+.w-cont {
+  
+  margin: 0 auto;
+}
+.main-head h2 {
+  font-family: Bauziet Norm;
+ 
+  font-weight: 700;
+  line-height: 192px;
+  letter-spacing: -0.011em;
+
+}
+.sub-text li {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.011em;
+  margin-right: 15px;
+}
+/* work  */
+.heading h2 {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 48px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  margin-bottom: 15px;
+}
+.heading p {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.work-display {
+  /* padding: 16px 9px 16px 9px; */
+  border-radius: 4px;
+  background-color: #1a1b1b;
+  /* margin: 16px 32px 16px 0; */
+}
+.work-display img {
+  width: 100%;
+}
+/* ====testimonials */
+.testimonial {
+  display: block;
+  margin: 0 auto;
+}
+.testimonial p {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: -0.011em;
+}
+.testimonial label {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.011em;
+}
+.testimonial img {
+  display: block;
+}
+.carousel-indicators li::before {
+  width: 100%;
+  border-radius: 100%;
+}
+.carousel-indicators {
+  left: 80%;
+  bottom: unset;
+  top: -20px;
+}
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev,
+.carousel-inner .carousel-item.active {
+  display: block;
+}
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.carousel-inner .carousel-item-next.carousel-item-left,
+.carousel-inner .carousel-item-prev.carousel-item-right {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    transition: transform 0.6s ease-in-out;
+  }
+}
+.carousel-inner .carousel-item-next,
+.active.carousel-item-right {
+  transform: translateY(100%);
+}
+.carousel-inner .carousel-item-prev,
+.active.carousel-item-left {
+  transform: translateY(-100%);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%, 100%;
+}
+.carousel-indicators li {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #d9d9d9;
+}
+.carousel-indicators li:nth-child(1) {
+  top: 30px;
+}
+.carousel-indicators li:nth-child(2) {
+  top: 60px;
+}
+.carousel-indicators li:nth-child(3) {
+  top: 90px;
+}
+.carousel-indicators li:nth-child(4) {
+  top: 120px;
+}
+.carousel-indicators li:nth-child(5) {
+  top: 150px;
+}
+
+.carousel-indicators .active {
+  background-image: url(../img/Vector.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+/* ==================Pricing======== */
+.col-6 {
+  /* padding-right: 11%; */
+}
+.pad-adj {
+  padding-right: 6%;
+  margin-top: 80px;
+}
+.sub-heading .mvp {
+  padding-right: 220px;
+}
+.sub-heading .ls {
+  padding-right: 111px;
+}
+.mar-adj {
+  margin-right: 60px;
+}
+.sub-heading h2 {
+  display: inline-block;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 48px;
+  letter-spacing: -0.011em;
+  padding-right: 60px;
+}
+.sub-heading h3 span {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.011em;
+}
+
+.sub-heading h3 {
+  display: inline-block;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 54px;
+  letter-spacing: -0.011em;
+}
+.sub-heading {
+  border-bottom: 1px solid #0000001f;
+  padding-top: 12px;
+}
+.support {
+  float: right;
+  margin-top: 24px;
+}
+.support li {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.011em;
+}
+
+
+/* ===========FAQ Accordian============= */
+.wrapper {
+  width: 70%;
+}
+/*  */
+@media (max-width: 992px) {
+  .wrapper {
+    width: 100%;
+  }
+  .main-head h2 {
+   
+    font-weight: 700;
+    line-height: 81px;
+   
+  
+  }
+}
+.panel-heading {
+  padding: 0;
+  border: 0;
+}
+
+
+.panel-heading.active a:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* =============== Footer ========== */
+.bg-black {
+  background: #000000;
+  color: #fff;
+}
+.talk p {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.011em;
+}
+/* .bg-black .link__graphic {
+  stroke: #fff;
+} */
+.talk a,
+.talk  {
+  color: #fff;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.041em;
+}
+.talk a:hover{
+  color: white;
+}
+.f-nav a {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.011em;
+  color: #fff;
+  align-content: end;
+}
+/* =============================Cursor Animation =============================*/
+.cursor-animation {
+  --color-text: #fff;
+  --color-bg: #ffffff;
+  --color-link: #124cec;
+  --color-link-hover: #141414;
+  --cursor-bg: #000000;
+  --cursor-blend-mode: exclusion;
+  --gradient-text-1: #124ebd;
+  --gradient-text-2: rgb(196, 24, 24);
+}
+body {
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  color: #000;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+  content: "";
+  position: fixed;
+  z-index: 1000;
+}
+
+.js .loading::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+}
+
+.js .loading::after {
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: var(--color-link);
+  animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+  to {
+    opacity: 1;
+    transform: scale3d(0.5, 0.5, 1);
+  }
+}
+
+body #cdawrap {
+  justify-self: start;
+}
+
+.cursor {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 999999;
+  mix-blend-mode: var(--cursor-blend-mode);
+  --size: calc(100vw / var(--columns));
+}
+
+.cursor__inner {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), var(--size));
+}
+
+.cursor__inner-box {
+  width: var(--size);
+  height: var(--size);
+  background: var(--cursor-bg);
+  opacity: 0;
+  border-radius: var(--cursor-radius);
+}
+
+/* ===========================underline animation============================ */
+.content__underline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.content__underline_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  position: relative;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+.link::before,
+.link::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.link::before {
+  content: "";
+  /* show by default */
+}
+.link--iocaste {
+  font-family: lust-fine, sans-serif;
+  overflow: hidden;
+  padding: 7px 0;
+  font-size: 12px;
+  font-family: inter;
+  font-weight: 500;
+}
+
+.link__graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.link__graphic--slide {
+  top: -3px;
+  stroke-width: 2px;
+  transition: transform 0.7s;
+  transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.link:hover .link__graphic--slide {
+  transform: translate3d(-66.6%, 0, 0);
+}
+/* ================================== Circle Eye Animation=========================== */
+.content__eye {
+  counter-increment: itemcounter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.button {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+@keyframes rotateIt {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.button--hati:hover::before {
+  opacity: 0.7;
+}
+
+.button--hati span {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.button--surtur {
+  padding: 0;
+  background: none;
+  -webkit-clip-path: circle(40% at 50% 50%);
+  clip-path: circle(40% at 50% 50%);
+}
+
+.button--surtur:focus-visible {
+  background: #443ffc;
+}
+
+.textcircle {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.textcircle text {
+  font-size: 32px;
+  text-transform: uppercase;
+  fill: #000;
+}
+
+.textcircle textPath {
+  letter-spacing: 17px; /* Firefox needs this */
+}
+
+.button--surtur:hover .textcircle {
+  animation: rotateIt 7s linear infinite;
+}
+
+.eye {
+  position: absolute;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+}
+
+.eye__outer,
+.eye__inner,
+.eye__lashes-up,
+.eye__lashes-down {
+  stroke: #000;
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.eye__lashes-down {
+  opacity: 0;
+}
+
+.button--surtur:hover .eye__lashes-up,
+.button--surtur:hover .eye__inner,
+.button--surtur:hover .eye__iris {
+  animation: blinkHide 2s step-end infinite;
+}
+
+.button--surtur:hover .eye__lashes-down {
+  animation: blinkShow 2s step-end infinite;
+}
+
+@keyframes blinkHide {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkShow {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+}
+/* ================================== Circle Eye Animation=========================== */
+/* ==================Responcive============== */
+@media screen and (min-width: 53em) {
+  :root {
+    --columns: 30;
+    --page-padding: 2rem;
+  }
+}
+/* menu */
+
+/* Hide the menu by default */
+.menu.hidden {
+  display: none;
+}
+
+/* Full screen menu */
+
+/* Style for the close button */
+.close--menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+}
+
+/* Style for menu items */
+.menu__item {
+  margin: 20px 0;
+}
+
+.menu__item-link {
+  font-size: 2rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Hide the default button */
+.menu-link {
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+/* When menu is open, hide the toggle button */
+body.menu-open .menu-link {
+  display: none;
+}
+
+/* General styles */
+.unbutton {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.unbutton:focus {
+  outline: none;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.oh__inner {
+  display: inline-block;
+  transform-origin: 0% 50%;
+  will-change: transform;
+}
+/* modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  border-radius: 0%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  overflow-y: scroll;
+  transition: opacity 0.3s ease; /* Transition for smooth fade-in/out */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  width: 100%;
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s ease; /* Transition for smooth fade-in/out */
+}
+
+.modal-content.show {
+  opacity: 1; /* Fully opaque when modal is shown */
+}
+
+.modal::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+/* <!-- accordian --> */
+  .accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid #0000001F;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    position: relative;
+    padding-right: 30px;
+  }
+
+  .accordion::after {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L8 8.5L15 1.5' stroke='black' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    display: inline-block;
+    width: 16px;
+    height: 10px;
+    position: absolute;
+    right: 10px;
+  }
+
+  .accordion.active::after {
+    transform: translateY(0%) rotate(180deg);
+    margin-top: 34px;
+  }
+
+  @media screen and (max-width: 1020px) {
+    .accordion.active::after {
+      transform: translateY(0%) rotate(180deg);
+      margin-top: 14px;
+    }
+  }
+
+
+
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .accordion.active+.panel {
+    max-height: 1000px;
+    /* Adjust this value to fit your content */
+    padding-top: 10px;
+    /* Adjust padding as needed */
+    padding-bottom: 10px;
+    /* Adjust padding as needed */
+  }
+
+/* <!-- accordian end --> */
+
+
+
+
+/* text animation */
+/* Fullpage Locking */
+.slides-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+
+  .slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+/* Common Styles */
+h1 {
+  color: #000000;
+  font-size: 4rem;
+  line-height: 1.175;
+  text-align: center;
+  max-width: 500px;
+}
+
+h2 {
+  position: relative;
+  font-size: 4rem;
+  line-height: 1.175;
+
+  .word {
+    line-height: 1.2;
+  }
+}
+
+
+span.word {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  &::after {
+    content: attr(data-headline);
+    position: relative;
+    display: inline-block;
+    padding-right: 2px; 
+
+    transform: translateY(-110%);
+    transition: transform 1.25s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+  }
+
+  &:nth-child(2)::after {
+    transition-delay: 0.3s;
+  }
+  &:nth-child(3)::after {
+    transition-delay: 0.4s;
+  }
+  &:nth-child(4)::after {
+    transition-delay: 0.5s;
+  }
+  &:nth-child(5)::after {
+    transition-delay: 0.6s;
+  }
+}
+
+.highlight {
+  .line {
+    display: block;
+    margin-bottom: 10px;
+
+    .word {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      padding: 5px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: #fabc3d;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+
+        transition: width 0.35s ease-out;
+      }
+    }
+
+    &:nth-child(2) > .word::after {
+      transition-delay: 0.3s;
+    }
+    &:nth-child(3) > .word::after {
+      transition-delay: 0.45s;
+    }
+  }
+}
+
+
+.slide.animate {
+  .word::after {
+    transform: translateY(0%);
+  }
+
+  .highlight {
+    .word::before {
+      width: 100%;
+    }
+  }
+}
+
+
+.reveal-text.highlight-text {
+  .word {
+    margin-bottom: -16px;
+    white-space: nowrap;
+  }
+}
+
+.slide.red {
+  background-color: #de3243;
+
+  .highlight > .line > .word::before {
+    background-color: white;
+  }
+}
+
+.slide.yellow {
+  background-color: #fabc3d;
+
+  .highlight > .line > .word::before {
+    background-color: white;
+  }
+}
+
+
+
+

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design.inc</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+ 
+  <link rel="stylesheet" type="text/css" href="css/custom.css" />
+  <link rel="stylesheet" type="text/css" href="css/text-animation.css" />
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <script> 
+    document.documentElement.className = "js";
+    var supportsCssVars = function () {
+      var e,
+        t = document.createElement("style");
+      return (
+        (t.innerHTML = "root: { --tmp-var: bold; }"),
+        document.head.appendChild(t),
+        (e = !!(
+          window.CSS &&
+          window.CSS.supports &&
+          window.CSS.supports("font-weight", "var(--tmp-var)")
+        )),
+        t.parentNode.removeChild(t),
+        e
+      );
+    };
+    supportsCssVars();
+
+    // accordian
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   var accordions = document.querySelectorAll('.accordion-button');
+
+    //   accordions.forEach(function (accordion) {
+    //     accordion.addEventListener('click', function () {
+    //       var panel = this.nextElementSibling;
+    //       var isActive = panel.classList.contains('show');
+
+   
+    //       accordions.forEach(function (acc) {
+    //         acc.nextElementSibling.classList.remove('show');
+    //       });
+
+         
+    //       if (!isActive) {
+    //         panel.classList.add('show');
+    //       }
+    //     });
+    //   });
+    // });
+
+  </script>
+    <style>
+      .word-line { overflow: hidden; }
+      .skew-up { opacity: 0; }
+    </style>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let addAnimation = function () {
+          document.querySelectorAll(".skew-up").forEach(function (element) {
+            // Reset any previous SplitType instance
+            SplitType.revert(element);
+            
+            const text = new SplitType(element, {
+              types: "lines, words",
+              lineClass: "word-line"
+            });
+            
+            let lines = element.querySelectorAll(".word-line .word");
+            
+            let tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: element,
+                start: "top 85%",
+                end: "top 85%",
+                onComplete: function () {
+                  element.classList.remove("skew-up");
+                }
+              }
+            });
+            
+            tl.set(element, { opacity: 1 })
+              .from(lines, {
+                y: "100%",
+                skewX: "-6",
+                duration: 2,
+                stagger: 0.03,
+                ease: "expo.out"
+              });
+          });
+        };
+  
+        addAnimation();
+  
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            addAnimation();
+          }
+        });
+      });
+    </script>
+  
+</head>
+
+<body>
+  <!-- mobile screen menu -->
+  <!-- mobile screen menu -->
+  <nav id="menu"
+  class="menu hidden fixed inset-0 lg:hidden w-full h-full bg-[rgba(250,250,250)] flex flex-col justify-center items-center z-[1000] text-black">
+  <span class="menu__item oh uppercase"><a class="menu__item-link oh__inner close-menu-link"
+      href="#services">SERVICES</a></span>
+  <span class="menu__item oh"><a class="menu__item-link oh__inner close-menu-link scroll-link" href="#work">WORK</a></span>
+  <span class="menu__item oh"><a class="menu__item-link oh__inner close-menu-link scroll-link" href="#pricing">PRICING</a></span>
+  <span class="menu__item oh"><a class="menu__item-link oh__inner close-menu-link scroll-link"
+      href="#details-4">CONTACT</a></span>
+      <button id="closeMenu" class="close lg:px-0 text-2xl mt-2 !text-black close--menu oh unbutton"
+      aria-label="Close menu">
+      <img src="img/crossbutton.svg" alt="" class="h-5 w-5" /><img>
+    </button>
+</nav>
+
+<div class="flex items-center justify-end mt-3 ">
+ 
+  <button id="menuToggle" class="menu-link oh px-4 pb-12 lg:py-0 lg:px-0 unbutton underline text-3xl lg:hidden"><span
+      class="oh__inner">
+    <img src="./img/mblmenu.svg">
+    </span></button>
+</div>
+  <!-- mobile screen menu end -->
+
+
+  <!-- mobile screen menu  end-->
+
+  <div class="lg:px-20  py-8 xl:py-16">
+    <!-- Navigation -->
+    <ul class="items-center  px-4 gap-x-16 lg:px-0 justify-end hidden lg:flex">
+      <li class="nav-item">
+        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#services">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#work">WORK</a>
+      </li>
+      <li class="nav-item">
+        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#pricing">PRICING</a>
+      </li>
+      <li class="nav-item">
+        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#">CONTACT</a>
+      </li>
+      <!-- underline Animation -->
+      <li class="content__underline">
+        <a href="#" class="link link--iocaste">
+          <span class="text-black font-medium text-xs leading-5">BOOK A CALL</span>
+          <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
+            preserveAspectRatio="none">
+            <path
+              d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
+            </path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <!-- Navigation Ends-->
+    <!-- Hero Section -->
+    <!-- Main Logo -->
+    <div class="d-flex px-4  lg:py-0 lg:p-2 ">
+      <img src="img/design.svg" alt="" class="w-72 lg:w-[654px] 2xl:w-[875px] " />
+    </div>
+    <!-- Rotating Eye Animation -->
+    <div class="flex items-center justify-end">
+      <ul>
+        <li class="content__eye">
+          <button class="button button--surtur">
+            <svg class="textcircle" viewBox="0 0 500 500">
+              <defs>
+                <path id="textcircle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" />
+              </defs>
+              <text>
+                <textpath xlink:href="#textcircle" aria-label="Projects &amp; client work 2020" textLength="900">
+                 BOOK A FREE CONSULTATION
+                </textpath>
+              </text>
+            </svg>
+            <svg aria-hidden="true" class="eye" width="70" height="70" viewBox="0 0 70 70"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="eye__outer"
+                d="M10.5 35.308c5.227-7.98 14.248-13.252 24.5-13.252s19.273 5.271 24.5 13.252c-5.227 7.98-14.248 13.253-24.5 13.253s-19.273-5.272-24.5-13.253z" />
+              <path class="eye__lashes-up" d="M35 8.802v8.836M49.537 11.383l-3.31 8.192M20.522 11.684l3.31 8.192" />
+              <path class="eye__lashes-down"
+                d="M35 61.818v-8.836 8.836zM49.537 59.237l-3.31-8.193 3.31 8.193zM20.522 58.936l3.31-8.193-3.31 8.193z" />
+              <circle class="eye__iris" cx="35" cy="35.31" r="5.221" />
+              <circle class="eye__inner" cx="35" cy="35.31" r="10.041" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!-- Hero Text -->
+   
+    <div class="px-4 lg:px-0   2xl:pt-16 w-full justify-content-start">
+      <p class="text-lg skew-up font-extralight leading-7 tracking-[-1.1%]">
+        For 16 years, we've been turning chaos into order <br />
+        for startups, SMEs, and Enterprises with audacious creativity
+      </p>
+
+    </div>
+ 
+    
+    <!-- Spacer -->
+    <div><span class="spacer h-8 lg:h-[150px]"></span></div>
+    <!-- Spacer -->
+    <!-- companies -->
+    <div class="flex items-center px-4 lg:px-0 2xl:pt-16  flex-wrap justify-center lg:justify-between gap-8 lg:gap-x-0">
+      <img src="img/ncrSVG.svg" alt="" />
+      <img src="img/uplandSVg.svg" alt="" />
+      <img src="img/canvaSVG.svg" alt="" />
+      <img src="img/arrisSVG.svg" alt="" />
+      <img src="img/scteSVG.svg" alt="" />
+      <img src="img/sunSVG.svg" alt="" />
+      <img src="img/liteSVG.svg" alt="" />
+    </div>
+  </div>
+
+
+  <!-- container div -->
+  <!-- Hero Section Ends -->
+  <!-- Crafting -->
+  <div >
+
+    
+    <div class="d-flex justify-content-center text-2xl lg:text-5xl lg:mt-32 crafting">
+      <h1 class="text-center reveal crafting-heading skew-up">Crafting</h1>
+    </div>
+    <div class="d-flex justify-content-center lg:mt-6">
+      <div class="flex px-4 lg:px-0 items-center justify-center">
+        <img class="lg:w-5/6" src="img/laptop.png" alt="Laptop" />
+      </div>
+    </div>
+    <div class="d-flex justify-content-center pt-3 text-2xl lg:text-5xl crafting">
+      <h1 class="crafting-heading skew-up">Mastery</h1>
+    </div>
+  </div>
+  
+  
+
+  <!-- Crafting Ends -->
+
+  <!-- Services -->
+  <div class="lg:px-20 lg:mt-32" id="services">
+    <div class="d-flex service px-4 lg:px-0">
+      <h2 class="skew-up">Services</h2>
+    </div>
+    <div class="d-flex flex-column text-5xl lg:text-9xl main-head leading-16">
+      <div class="p-2 px-4 lg:px-0">
+        <h2 class="lg:text-center skew-up">Strategy</h2>
+        <ul class="lg:flex space-y-3  lg:space-y-0 items-center justify-center gap-x-3 text-sm">
+          <li>• Design thinking</li>
+          <li>• Requirement Analysis</li>
+          <li>• UX Research</li>
+          <li>• Design Sprint Planning</li>
+        </ul>
+      </div>
+      <div class="p-2 px-4 lg:px-0">
+        <h2 class="lg:text-center skew-up">Product</h2>
+        <ul class="lg:flex space-y-3 lg:space-y-0 items-center justify-center gap-x-3 text-sm">
+          <li>• Hi-Fi Designs</li>
+          <li>• Interactive Prototypes</li>
+          <li>• Design Systems</li>
+          <li>• Design Sprint Planning</li>
+        </ul>
+      </div>
+      <div class="p-2 px-4 lg:px-0">
+        <h2 class="lg:text-center skew-up">Application</h2>
+        <ul class="lg:flex space-y-3 lg:space-y-0 items-center justify-center gap-x-3 text-sm">
+          <li>• Web 3.0</li>
+          <li>• SaaS</li>
+          <li>• Fintech</li>
+          <li>• Data Visualisation</li>
+          <li>• Dashboards</li>
+          <li>• Native Mobile Applications</li>
+        </ul>
+      </div>
+      <div class="p-2 px-4 lg:px-0">
+        <h2 class="lg:text-center skew-up">Marketing</h2>
+        <ul class="lg:flex space-y-3 lg:space-y-0 items-center justify-center gap-x-3 text-sm">
+          <li>• Landing Pages</li>
+          <li>• Websites</li>
+          <li>• Conversion Rate Optimisation</li>
+          <li>• Micro Interactions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Ends -->
+  <!-- Work -->
+  <div class="lg:mt-32 lg:px-20" id="work">
+
+    <div class="d-flex  service px-4 lg:px-0">
+      <h2 class="skew-up">Work</h2>
+    </div>
+    <div class="px-4  lg:px-0  lg:w-1/2 mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <h2
+          class="font-inter text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
+          Web 3.0
+        </h2>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
+          Bloquity
+        </p>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+          D3 Network
+        </p>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+          Aitheon
+        </p>
+      </div>
+      <div>
+        <h2
+          class="font-inter text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
+          Enterprise
+        </h2>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
+          NCR - National Cash Register
+        </p>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+          SCTE
+        </p>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+          GS1 Global
+        </p>
+      </div>
+      <div>
+        <h2
+          class="font-inter text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
+          Tech
+        </h2>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
+          Upland Software
+        </p>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+          Toyota
+        </p>
+        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+          Bloquity
+        </p>
+      </div>
+    </div>
+    <div class="show-work-button items-center hidden lg:flex justify-center py-12">
+   
+      <li class="content__underline">
+        <button id="myBtn"  class="link link--iocaste out !outline-none">
+          <span class="text-black font-medium text-base leading-5"> View Recent Work</span>
+          <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
+            preserveAspectRatio="none">
+            <path
+              d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
+            </path>
+          </svg>
+        </button>
+      </li>
+    </div>
+  </div>
+  <!-- modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
+        <h3 class="font-medium text-base text-end w-1/2 ml-14  leading-[24px]">WORK</h3>
+        <div class="flex items-center w-1/2 justify-end ">
+          <img src="img/crossbutton.svg" class="close pr-2 lg:pr-6" alt="Bloquty" />
+        </div>
+      </div>
+      <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
+        <p class="font-bold text-base text-center   leading-[24px]">
+          Bloquity - Web 3.0 real estate
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+         <li class="text-sm leading-[21px] font-medium">Design System</li>
+         <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+         <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+         <li class="text-sm leading-[21px] font-medium">Animations</li>
+         <li class="text-sm leading-[21px] font-medium">Web App</li>
+         <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+        </ul>
+     
+      </div>
+      <img src="img/work1.svg" class="w-full " alt="Bloquty" />
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Crypto Exchange
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/crypto.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Wove
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work3.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Shoplift
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work4.png" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>    <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Matchr
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work5.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>    <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Xsocial
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/xsocial.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>    <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+        Canva
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work8.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>  
+        <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Q loop
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work9.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          The New York Sun
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work10.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>   
+       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          SXM
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/xsmfull.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          SXM
+        </p>
+        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
+          <li class="text-sm leading-[21px] font-medium">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+         </ul>
+        <img src="img/work11.svg" class="w-full pt-6 lg:pt-16 pb-8" alt="Bloquty" />
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <!-- Work Ends -->
+ <!-- Testimonials -->
+ <div class="flex items-center justify-center h-[50vh]  lg:h-[100vh]">
+  <div class="lg:px-20 w-full">
+    <div id="carouselExampleIndicators" class="carousel lg:w-1/3 lg:mx-auto slide" data-ride="carousel">
+      <ol class="carousel-indicators left-[80%] cursor-pointer lg:left-[80%] lg:right-[0%]">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial px-4 lg:w-[347px] lg:px-0">
+            <p>
+              They are amazing! I highly recommend using them as they did an
+              amazing job on my UX/UI design. I will be back.
+            </p>
+            <label>Verinder Grewal - Founder</label>
+            <img src="img/logo-client.png" alt="Client Logo" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial lg:w-[347px] px-4 lg:px-0">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's,
+            </p>
+            <label>Verinder Grewal - Founder</label>
+            <img src="img/logo-client.png" alt="Client Logo" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial lg:w-[347px] px-4 lg:px-0">
+            <p>
+              They are amazing! I highly recommend using them as they did an
+              amazing job on my UX/UI design. I will be back.
+            </p>
+            <label>Verinder Grewal - Founder</label>
+            <img src="img/logo-client.png" alt="Client Logo" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial lg:w-[347px] px-4 lg:px-0">
+            <p>
+              They are amazing! I highly recommend using them as they did an
+              amazing job on my UX/UI design. I will be back.
+            </p>
+            <label>Verinder Grewal - Founder</label>
+            <img src="img/logo-client.png" alt="Client Logo" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial lg:w-[347px] px-4 lg:px-0">
+            <p>
+              They are amazing! I highly recommend using them as they did an
+              amazing job on my UX/UI design. I will be back.
+            </p>
+            <label>Verinder Grewal - Founder</label>
+            <img src="img/logo-client.png" alt="Client Logo" />
+          </div>
+        </div>
+      
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+  <!-- Testimonials end -->
+  <!-- Pricing -->
+  <div class="lg:px-20 mt-20" id="pricing">
+    <div class="px-4 lg:px-0">
+      <h2 class="skew-up">Pricing</h2>
+    </div>
+
+    <div class="flex space-y-4 flex-col lg:flex-row justify-between py-20">
+      <div class="px-4 lg:px-0 lg:translate-y-4 lg:w-[45%]">
+        <div class="flex justify-between">
+          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">
+            Concept
+          </h2>
+          <h3 class="lg:mr-[90px]">
+            <span class="font-medium text-xl lg:text-3xl leading-12">$2K</span>
+            <span class="text-sm font-normal"> fixed</span>
+          </h3>
+        </div>
+        <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
+        <div class="flex md:justify-end lg:mr-6 mt-7">
+          <ul class="space-y-3 font-normal text-sm">
+            <li>• Delivered in 5 days</li>
+            <li>• Main screens</li>
+            <li>• Presentable Prototype</li>
+            <li>• Development-ready </li>
+
+            <div class="mt-6">
+          
+              <button  class="link link--iocaste !outline-none">
+                <span class=" px-2 py-2 mt-3 text-sm font-medium">Get started</span>
+                <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
+                  preserveAspectRatio="none">
+                  <path
+                    d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="px-4 lg:px-0 lg:w-[45%]">
+        <div class="flex items-center justify-between">
+          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">
+            Design Support
+          </h2>
+          <h3 class=" lg:mr-[85px]">
+            <span class="font-medium text-xl lg:text-3xl leading-12">$5K</span>
+            <span class="text-sm font-normal"> per month</span>
+          </h3>
+        </div>
+        <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
+        <div class="flex md:justify-end  mt-7">
+          <ul class="space-y-3 font-normal text-sm">
+            <li>• Part-time engagement</li>
+            <li>• Pause or cancel anytime</li>
+            <li>• Unlimited requests & revisions</li>
+            <li>• Async communication</li>
+            <li>• One request at a time</li>
+            <div class="mt-6">
+              <button  class="link link--iocaste !outline-none">
+                <span class=" px-2 py-2 mt-3 text-sm font-medium">Get started</span>
+                <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
+                  preserveAspectRatio="none">
+                  <path
+                    d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex space-y-4 flex-col lg:flex-row justify-between pb-20">
+      <div class="px-4 lg:px-0 lg:translate-y-4 lg:w-[45%]">
+        <div class="flex items-center justify-between">
+          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">MVP</h2>
+          <h3 class="lg:mr-[77px]">
+            <span class="font-medium text-xl lg:text-3xl leading-12">$15K</span>
+            <span class="text-sm font-normal"> fixed</span>
+          </h3>
+        </div>
+        <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
+        <div class="flex md:justify-end lg:mr-[15px] mt-7">
+          <ul class="space-y-3 font-normal text-sm">
+            <li>• Full-time engagement</li>
+            <li>• Delivered in 3-5 weeks</li>
+            <li>• Complete MVP</li>
+            <li>• Design System included</li>
+            <li>• Daily updates</li>
+            <div class=" translate-y-3">
+              <!-- <a href="#" class="px-2 py-2  text-sm text-[#454545] font-light">Book a call</a> -->
+            </div>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="px-4 lg:px-0 lg:w-[45%]">
+        <div class="flex justify-between">
+          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">
+            Large Scale
+          </h2>
+          <h3 class="lg:mr-[80px]">
+            <span class="font-medium text-xl lg:text-3xl leading-12">$40K</span>
+            <span class="text-sm font-normal">starting</span>
+          </h3>
+        </div>
+        <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
+        <div class="flex md:justify-end lg:mr-6 mt-7">
+          <ul class="space-y-3 font-normal text-sm">
+            <li>• Dedicated Team</li>
+            <li>• End to end design delivery </li>
+            <li>• Detailed calls</li>
+            <div class="translate-y-3">
+              <!-- <a href="#" class="px-2 py-2 mt-3 text-sm text-[#454545] font-light">Book a call</a> -->
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Ends -->
+  <!-- FAQs -->
+  <div class="lg:px-20 lg:mt-48 !z-0 relative">
+    <div class="px-4 lg:px-0">
+      <h2 class="skew-up">FAQ</h2>
+
+    </div>
+    <div class="px-4 space-y-4 mt-6 lg:mt-12">
+
+      <div class="lg:px-20">
+        <button
+          class="accordion  font-extralight !outline-none !text-[#000000] px-0  pb-2  text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">How
+          does it work?</button>
+
+        <div class="panel">
+          <p class="font-normal text-sm leading-[24px] text-[#475569] py-4">Offers a comprehensive range of design
+            services
+            including graphic design, web design, branding, logo design, UI/UX design, and more. We specialize in
+            creating visually compelling solutions tailored to meet the unique needs of each client.Our design process
+            typically begins with an initial consultation to understand your project requirements, objectives, and
+            vision. From there, our team collaborates closely with you to develop concepts, gather feedback, and refine
+            the design until it meets your satisfaction.</p>
+        </div>
+        <button
+          class="accordion  font-extralight !outline-none !text-[#000000] mt-3 py-4  px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">Can
+          I see examples of your previous work?</button>
+        <div class="panel">
+          <p class="font-normal  text-sm  text-[#475569]  py-4 leading-[24px]">Offers a comprehensive range of design
+            services
+            including graphic design, web design, branding, logo design, UI/UX design, and more. We specialize in
+            creating visually compelling solutions tailored to meet the unique needs of each client.Our design process
+            typically begins with an initial consultation to understand your project requirements, objectives, and
+            vision. From there, our team collaborates closely with you to develop concepts, gather feedback, and refine
+            the design until it meets your satisfaction.</p>
+        </div>
+        <button
+          class="accordion  font-extralight !outline-none !text-[#000000] py-2 mt-3  px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">Can
+          I request revisions to design?</button>
+        <div class="panel">
+          <p class="font-normal text-sm  text-[#475569] py-4 leading-[24px]">Offers a comprehensive range of design
+            services
+            including graphic design, web design, branding, logo design, UI/UX design, and more. We specialize in
+            creating visually compelling solutions tailored to meet the unique needs of each client.Our design process
+            typically begins with an initial consultation to understand your project requirements, objectives, and
+            vision. From there, our team collaborates closely with you to develop concepts, gather feedback, and refine
+            the design until it meets your satisfaction.</p>
+        </div>
+        <button
+          class="accordion  font-extralight !outline-none !text-[#000000] py-2  mt-3 px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">
+          How do I get started with</button>
+        <div class="panel">
+          <p class="font-normal text-sm py-4 leading-[24px] text-[#475569] ">Offers a comprehensive range of design
+            services
+            including graphic design, web design, branding, logo design, UI/UX design, and more. We specialize in
+            creating visually compelling solutions tailored to meet the unique needs of each client.Our design process
+            typically begins with an initial consultation to understand your project requirements, objectives, and
+            vision. From there, our team collaborates closely with you to develop concepts, gather feedback, and refine
+            the design until it meets your satisfaction.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- FAQsEnds -->
+  <!-- Footer -->
+  <div class="bg-[#0C0C0C] text-white   lg:px-20 py-8 lg:py-0 lg:pt-16 pb- mt-8  lg:mt-56">
+
+    <div class="flex flex-col flex-col-reverse lg:flex-row lg:items-center justify-between">
+      <div class="talk px-4  mt-10  w-full lg:mt-0 lg:px-0">
+        <div class="flex items-center justify-between w-full ">
+          <p class="skew-up">Lets talk</p>
+          <div class="hidden lg:block">
+            <ul class="flex flex-wrap px-2  lg:px-0 lg:justify-content-end f-nav">
+              <li class="nav-item">
+                <a class="nav-link " href="#">INSIGHTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">EXPERIMENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">MENTORSHIP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scroll-link" href="#pricing">PRICING</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <li class="relative flex">
+          <a href="#" class="link link--iocaste">
+            <span class="text-white text-4xl  font-bold leading-5">BOOK A CALL</span>
+            <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
+              preserveAspectRatio="none">
+              <path
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                style="stroke: white;"></path>
+            </svg>
+          </a>
+        </li>
+
+
+      </div>
+      <div class="lg:hidden">
+        <ul class="flex flex-wrap px-4 justify-between  lg:px-0 lg:justify-content-end f-nav">
+          <li class="nav-item">
+            <a class="text-white" href="#">INSIGHTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="" href="#">EXPERIMENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="" href="#">MENTORSHIP</a>
+          </li>
+          <li class="nav-item">
+            <a class="scroll-link" href="#pricing">PRICING</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="relative mt-56 lg:mt-80 px-4 lg:px-0 w-fit xl:w-auto     ">
+      <img src="img/footerlogoSVG.svg" alt="Footer Logo" alt="" class="w-72 lg:w-[654px] xl:w-[78%]  " />
+      <img src="img/dog4.gif"
+        class="rounded-full absolute bottom-[23%]    hidden lg:block right-[31.5%] h-9 w-9    xl:right-[45.8%] xl:w-12 xl:h-12 2xl:w-16 2xl:h-16"
+        alt="Footer Logo" />
+    </div>
+
+
+    <div class="flex items-center px-4 lg:px-0  lg:-translate-y-10 lg:mt-0 justify-end">
+
+      <p class="font-normal  text-xs leading-5">© DESIGN INC 2024 </br>
+        ALL RIGHTS RESERVED</p>
+    </div>
+  </div>
+
+  <!-- Footer Ends-->
+  <!-- cursor Animation -->
+  <div class="cursor-animation">
+    <div class="cursor">
+      <div class="cursor__inner">
+        <!-- cursor__inner-box elements come here -->
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="gooey">
+            <fegaussianblur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <fecolormatrix in="blur" mode="matrix" values="
+					        1 0 0 0 0
+					        0 1 0 0 0
+					        0 0 1 0 0
+					        0 0 0 20 -7" result="gooey" />
+            <femorphology in="gooey" operator="dilate" radius="2" result="outline" />
+            <fecomposite in="outline" in2="gooey" operator="out" result="composite" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const section = document.getElementById('crafting-section');
+      const heading = section.querySelector('.crafting-heading');
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            heading.classList.add('crafting-animate');
+          } else {
+            heading.classList.remove('crafting-animate'); // Reset animation when not in view
+          }
+        });
+      }, {
+        threshold: 0.5 // Adjust this value as needed
+      });
+  
+      observer.observe(section);
+    });
+  </script>
+  
+
+  <script type="module" src="js/index.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+
+</html>
