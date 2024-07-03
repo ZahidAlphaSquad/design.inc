@@ -67,6 +67,7 @@
       .word-line { overflow: hidden; }
       .skew-up { opacity: 0; }
     </style>
+    
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
@@ -100,7 +101,8 @@
                 y: "100%",
                 skewX: "-6",
                 duration: 2,
-                stagger: 0.03,
+                // rotate:360,
+                stagger: 0.09,
                 ease: "expo.out"
               });
           });
@@ -317,7 +319,7 @@
     <div class="px-4  lg:px-0  lg:w-1/2 mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
       <div>
         <h2
-          class="font-inter text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
+          class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
           Web 3.0
         </h2>
         <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
@@ -332,7 +334,7 @@
       </div>
       <div>
         <h2
-          class="font-inter text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
+          class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
           Enterprise
         </h2>
         <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
@@ -347,7 +349,7 @@
       </div>
       <div>
         <h2
-          class="font-inter text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
+          class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
           Tech
         </h2>
         <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
@@ -365,7 +367,7 @@
    
       <li class="content__underline">
         <button id="myBtn"  class="link link--iocaste out !outline-none">
-          <span class="text-black font-medium text-base leading-5"> View Recent Work</span>
+          <span class="text-black skew-up font-medium text-base leading-5"> View Recent Work</span>
           <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
             preserveAspectRatio="none">
             <path
@@ -557,7 +559,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="testimonial px-4 lg:w-[347px] lg:px-0">
-            <p>
+            <p class="">
               They are amazing! I highly recommend using them as they did an
               amazing job on my UX/UI design. I will be back.
             </p>
@@ -839,7 +841,7 @@
         </div>
 
 
-        <li class="relative flex">
+        <li class="relative  flex">
           <a href="#" class="link link--iocaste">
             <span class="text-white text-4xl  font-bold leading-5">BOOK A CALL</span>
             <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
