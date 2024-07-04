@@ -434,10 +434,10 @@ body #cdawrap {
 /* ===========================underline animation============================ */
 .content__underline {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* position: relative; */
 }
 .content__underline_footer {
   display: flex;
@@ -711,7 +711,7 @@ body.menu-open .menu-link {
   background-color: #ffffff;
   width: 100%;
   opacity: 0; /* Initially transparent */
-  transition: opacity 0.3s ease; /* Transition for smooth fade-in/out */
+  transition: opacity 0.1s ease; /* Transition for smooth fade-in/out */
 }
 
 .modal-content.show {
@@ -921,7 +921,12 @@ span.word {
     background-color: white;
   }
 }
+/* text animation */
 
+.word-line { overflow: hidden; }
+.skew-up { opacity: 0; }
 
-
-
+/* remove the dot */
+.no-bullet {
+  list-style-type: none; /* Removes the bullet point */
+}

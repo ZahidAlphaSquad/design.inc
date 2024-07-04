@@ -39,84 +39,11 @@
       );
     };
     supportsCssVars();
-
-    // accordian
-    // document.addEventListener('DOMContentLoaded', function () {
-    //   var accordions = document.querySelectorAll('.accordion-button');
-
-    //   accordions.forEach(function (accordion) {
-    //     accordion.addEventListener('click', function () {
-    //       var panel = this.nextElementSibling;
-    //       var isActive = panel.classList.contains('show');
-
-   
-    //       accordions.forEach(function (acc) {
-    //         acc.nextElementSibling.classList.remove('show');
-    //       });
-
-         
-    //       if (!isActive) {
-    //         panel.classList.add('show');
-    //       }
-    //     });
-    //   });
-    // });
-
   </script>
-    <style>
-      .word-line { overflow: hidden; }
-      .skew-up { opacity: 0; }
-    </style>
-    
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        let addAnimation = function () {
-          document.querySelectorAll(".skew-up").forEach(function (element) {
-            // Reset any previous SplitType instance
-            SplitType.revert(element);
-            
-            const text = new SplitType(element, {
-              types: "lines, words",
-              lineClass: "word-line"
-            });
-            
-            let lines = element.querySelectorAll(".word-line .word");
-            
-            let tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: element,
-                start: "top 85%",
-                end: "top 85%",
-                onComplete: function () {
-                  element.classList.remove("skew-up");
-                }
-              }
-            });
-            
-            tl.set(element, { opacity: 1 })
-              .from(lines, {
-                y: "100%",
-                skewX: "-6",
-                duration: 2,
-                // rotate:360,
-                stagger: 0.09,
-                ease: "expo.out"
-              });
-          });
-        };
-  
-        addAnimation();
-  
-        window.addEventListener("resize", function () {
-          if (window.innerWidth >= 992) {
-            addAnimation();
-          }
-        });
-      });
-    </script>
+
   
 </head>
 
@@ -180,9 +107,23 @@
     <!-- Navigation Ends-->
     <!-- Hero Section -->
     <!-- Main Logo -->
-    <div class="d-flex px-4  lg:py-0 lg:p-2 ">
-      <img src="img/design.svg" alt="" class="w-72 lg:w-[654px] 2xl:w-[875px] " />
+    <div class="d-flex px-4 skew-up lg:py-0 lg:p-2 ">
+      <svg class="w-72 lg:w-[654px]  2xl:w-[875px]"  viewBox="0 0 655 163" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M34.7287 124.868C29.6056 124.868 24.8766 123.774 20.5417 121.586C16.3053 119.398 12.66 116.376 9.60582 112.522C6.55166 108.562 4.18715 103.874 2.51229 98.4564C0.837431 93.0387 0 87.1 0 80.6405C0 73.9725 0.886691 67.9297 2.66007 62.512C4.43346 56.9901 6.84723 52.3017 9.90139 48.4468C13.0541 44.5919 16.7979 41.6226 21.1328 39.5388C25.4677 37.4551 30.1968 36.4132 35.3199 36.4132C41.3297 36.4132 46.502 37.8197 50.837 40.6328C55.2704 43.4458 58.7187 47.457 61.1817 52.6663L67.9797 47.8217C65.4181 43.9668 63.6447 40.164 62.6595 36.4132C61.6743 32.5583 61.1817 27.922 61.1817 22.5043V7.97028H83.6445V122.055H65.024V121.43C65.5166 119.763 66.0585 118.148 66.6496 116.585C67.3393 114.918 68.0782 113.043 68.8664 110.959L62.0684 107.208C59.6054 113.147 55.9108 117.575 50.9847 120.492C46.0587 123.409 40.64 124.868 34.7287 124.868ZM42.4134 105.02C46.8469 105.02 50.7877 103.874 54.236 101.582C57.6842 99.2899 59.9994 96.1122 61.1817 92.0489V69.232C59.9994 65.3771 57.7827 62.2515 54.5315 59.8552C51.2803 57.4589 47.2902 56.2608 42.5612 56.2608C36.847 56.2608 32.1179 58.2924 28.3741 62.3557C24.6303 66.3148 22.7584 72.4097 22.7584 80.6405C22.7584 88.4545 24.5318 94.4973 28.0786 98.7689C31.6253 102.936 36.4036 105.02 42.4134 105.02Z" fill="#1E1E1E"/>
+        <path d="M85.6269 80.7968C85.6269 74.233 86.6121 68.2422 88.5825 62.8245C90.553 57.3027 93.3608 52.6143 97.0061 48.7593C100.651 44.8003 105.036 41.7788 110.159 39.6951C115.38 37.5072 121.144 36.4132 127.449 36.4132C133.557 36.4132 139.075 37.403 144.001 39.3825C149.025 41.3621 153.311 44.2793 156.858 48.1342C160.405 51.885 163.114 56.5213 164.986 62.0432C166.956 67.4609 167.941 73.66 167.941 80.6405V88.1419H108.09C108.582 93.5596 110.602 97.8834 114.149 101.113C117.794 104.239 122.572 105.802 128.484 105.802C133.607 105.802 138.139 104.655 142.08 102.363C146.02 100.071 149.075 96.9457 151.242 92.9866L163.951 108.146C162.276 110.855 160.109 113.251 157.449 115.335C154.887 117.418 151.981 119.19 148.73 120.648C145.577 122.003 142.227 123.044 138.681 123.774C135.134 124.503 131.538 124.868 127.893 124.868C121.686 124.868 115.971 123.878 110.75 121.898C105.627 119.815 101.193 116.897 97.4494 113.147C93.7056 109.292 90.7993 104.655 88.7303 99.2378C86.6614 93.8201 85.6269 87.6731 85.6269 80.7968ZM146.07 72.0451C145.577 66.7316 143.705 62.512 140.454 59.3864C137.203 56.2608 132.769 54.698 127.154 54.698C121.932 54.698 117.597 56.2087 114.149 59.2301C110.701 62.1473 108.73 66.419 108.238 72.0451H146.07Z" fill="#1E1E1E"/>
+        <path d="M183.359 92.0489C185.625 102.051 192.472 107.052 203.901 107.052C208.039 107.052 211.191 106.322 213.359 104.864C215.625 103.405 216.758 101.322 216.758 98.6127C216.758 96.7373 216.216 95.2787 215.132 94.2368C214.147 93.0908 212.719 92.2052 210.847 91.5801C209.073 90.9549 206.955 90.434 204.492 90.0173C202.029 89.6005 199.418 89.1317 196.66 88.6107C193.211 87.8814 189.763 86.9958 186.315 85.954C182.867 84.8079 179.763 83.2451 177.005 81.2656C174.246 79.286 171.98 76.8377 170.207 73.9204C168.532 70.899 167.694 67.2004 167.694 62.8245C167.694 58.5529 168.532 54.8022 170.207 51.5724C171.881 48.3426 174.246 45.5817 177.3 43.2896C180.354 40.9974 184 39.2784 188.236 38.1323C192.571 36.9863 197.3 36.4132 202.423 36.4132C212.669 36.4132 221.044 38.6012 227.546 42.977C234.048 47.2486 237.989 53.031 239.369 60.3241L221.782 66.419C220.305 62.0431 217.743 58.9175 214.098 57.0422C210.551 55.0626 206.364 54.0729 201.536 54.0729C197.398 54.0729 194.394 54.7501 192.522 56.1045C190.748 57.3547 189.862 59.1259 189.862 61.418C189.862 63.1892 190.403 64.5957 191.487 65.6376C192.669 66.6795 194.246 67.565 196.216 68.2943C198.285 68.9195 200.65 69.4925 203.31 70.0134C205.97 70.4302 208.827 70.9511 211.881 71.5762C215.723 72.3055 219.27 73.2432 222.521 74.3893C225.871 75.4311 228.777 76.8897 231.241 78.7651C233.802 80.6405 235.773 83.0368 237.152 85.954C238.63 88.767 239.369 92.3094 239.369 96.581C239.369 105.749 236.167 112.782 229.763 117.679C223.457 122.471 214.344 124.868 202.423 124.868C190.798 124.868 181.98 122.576 175.97 117.991C169.96 113.407 166.266 107.052 164.886 98.9252L183.359 92.0489Z" fill="#1E1E1E"/>
+        <path d="M253.798 27.9741C249.66 27.9741 246.31 26.7239 243.749 24.2234C241.286 21.6187 240.054 18.1806 240.054 13.9089C240.054 9.74145 241.286 6.40747 243.749 3.907C246.31 1.30233 249.66 0 253.798 0C258.034 0 261.384 1.30233 263.847 3.907C266.409 6.40747 267.69 9.74145 267.69 13.9089C267.69 18.1806 266.409 21.6187 263.847 24.2234C261.384 26.7239 258.034 27.9741 253.798 27.9741ZM242.714 39.2263H265.029V122.055H242.714V39.2263Z" fill="#1E1E1E"/>
+        <path d="M297.909 163C291.8 163 286.579 162.531 282.244 161.594C277.909 160.656 274.362 159.353 271.603 157.686C268.943 156.124 266.973 154.144 265.692 151.748C264.411 149.456 263.771 146.903 263.771 144.09C263.771 139.923 265.052 136.641 267.613 134.244C270.273 131.848 273.722 130.39 277.958 129.869V125.337C275.594 124.19 273.82 122.576 272.638 120.492C271.554 118.304 271.012 116.012 271.012 113.616C271.012 109.761 272.145 106.583 274.411 104.082C276.677 101.478 279.731 99.7587 283.574 98.9252V94.2368C277.761 92.4656 273.328 89.3921 270.273 85.0163C267.219 80.5363 265.692 75.379 265.692 69.5446C265.692 64.8562 266.48 60.6366 268.057 56.8859C269.633 53.1352 271.899 49.9575 274.855 47.3528C277.81 44.7482 281.357 42.7686 285.495 41.4142C289.633 39.9556 294.214 39.2263 299.239 39.2263H337.219L340.174 56.1045H336.923C335.445 56.1045 333.524 55.7919 331.16 55.1668C328.795 54.5417 326.431 53.3957 324.066 51.7287L320.371 58.1362C324.509 59.9073 327.514 62.4078 329.386 65.6376C331.357 68.7632 332.342 72.4097 332.342 76.5772C332.342 80.3279 331.603 83.714 330.125 86.7354C328.647 89.7568 326.578 92.3615 323.918 94.5494C321.258 96.6331 318.007 98.248 314.165 99.3941C310.421 100.54 306.234 101.113 301.603 101.113H295.987C293.623 101.113 291.948 101.582 290.963 102.52C290.076 103.353 289.633 104.499 289.633 105.958C289.633 107.729 290.322 108.927 291.702 109.552C293.18 110.177 295.051 110.594 297.317 110.802L314.904 111.74C319.238 112.053 322.933 112.834 325.987 114.084C329.041 115.335 331.504 117.002 333.376 119.085C335.248 121.065 336.578 123.409 337.366 126.118C338.253 128.931 338.696 132.004 338.696 135.338C338.696 140.027 337.76 144.09 335.889 147.528C334.017 151.071 331.307 153.936 327.761 156.124C324.214 158.416 319.928 160.135 314.904 161.281C309.879 162.427 304.214 163 297.909 163ZM298.943 84.3912C303.377 84.3912 306.677 83.0889 308.844 80.4842C311.012 77.8795 312.096 74.3893 312.096 70.0134C312.096 65.325 310.864 61.8348 308.401 59.5427C306.037 57.1464 302.884 55.9482 298.943 55.9482C294.51 55.9482 291.209 57.2506 289.042 59.8552C286.874 62.3557 285.79 65.7418 285.79 70.0134C285.79 74.806 286.973 78.4005 289.337 80.7968C291.702 83.193 294.904 84.3912 298.943 84.3912ZM298.5 147.841C305.298 147.841 309.928 147.059 312.391 145.497C314.953 143.934 316.234 141.85 316.234 139.245C316.234 136.537 315.445 134.765 313.869 133.932C312.293 133.203 310.519 132.786 308.549 132.682L285.938 131.275C284.756 131.588 283.82 132.473 283.13 133.932C282.441 135.495 282.096 137.162 282.096 138.933C282.096 142.475 283.574 144.819 286.529 145.965C289.584 147.216 293.574 147.841 298.5 147.841Z" fill="#1E1E1E"/>
+        <path d="M338.163 39.2263H358.114V39.8514C357.917 41.5184 357.522 43.3416 356.931 45.3212C356.439 47.1965 355.749 49.4887 354.862 52.1975L361.66 55.1668C364.517 48.9156 368.311 44.2272 373.04 41.1016C377.769 37.976 383.138 36.4132 389.148 36.4132C397.818 36.4132 404.813 39.4867 410.133 45.6338C415.453 51.6766 418.113 60.9492 418.113 73.4516V122.055H395.65V78.7651C395.65 71.993 394.468 66.7836 392.103 63.1371C389.739 59.3864 385.847 57.511 380.429 57.511C376.192 57.511 372.35 58.605 368.902 60.7929C365.453 62.9808 362.695 65.9501 360.626 69.7009V122.055H338.163V39.2263Z" fill="#1E1E1E"/>
+        <path d="M439.18 123.617C434.944 123.617 431.495 122.471 428.835 120.179C426.274 117.887 424.993 114.397 424.993 109.709C424.993 104.916 426.274 101.374 428.835 99.0815C431.495 96.7894 434.944 95.6433 439.18 95.6433C443.416 95.6433 446.865 96.7894 449.525 99.0815C452.185 101.374 453.515 104.916 453.515 109.709C453.515 114.397 452.185 117.887 449.525 120.179C446.865 122.471 443.416 123.617 439.18 123.617Z" fill="#1E1E1E"/>
+        <path d="M473.779 27.9741C469.642 27.9741 466.292 26.7239 463.73 24.2234C461.267 21.6187 460.036 18.1806 460.036 13.9089C460.036 9.74145 461.267 6.40747 463.73 3.907C466.292 1.30233 469.642 0 473.779 0C478.016 0 481.366 1.30233 483.829 3.907C486.39 6.40747 487.671 9.74145 487.671 13.9089C487.671 18.1806 486.39 21.6187 483.829 24.2234C481.366 26.7239 478.016 27.9741 473.779 27.9741ZM462.696 39.2263H485.011V122.055H462.696V39.2263Z" fill="#1E1E1E"/>
+        <path d="M492.433 39.2263H512.384V39.8514C512.187 41.5184 511.793 43.3416 511.202 45.3212C510.709 47.1965 510.019 49.4887 509.133 52.1975L515.931 55.1668C518.788 48.9156 522.581 44.2272 527.31 41.1016C532.039 37.976 537.408 36.4132 543.418 36.4132C552.088 36.4132 559.083 39.4867 564.403 45.6338C569.723 51.6766 572.383 60.9492 572.383 73.4516V122.055H549.921V78.7651C549.921 71.993 548.738 66.7836 546.374 63.1371C544.009 59.3864 540.118 57.511 534.699 57.511C530.463 57.511 526.62 58.605 523.172 60.7929C519.724 62.9808 516.965 65.9501 514.896 69.7009V122.055H492.433V39.2263Z" fill="#1E1E1E"/>
+        <path d="M573.648 81.2656C573.648 74.4935 574.633 68.3464 576.603 62.8245C578.672 57.3027 581.529 52.6143 585.175 48.7593C588.918 44.8003 593.401 41.7788 598.623 39.6951C603.943 37.5072 609.805 36.4132 616.209 36.4132C626.455 36.4132 634.829 38.9658 641.332 44.071C647.834 49.1761 652.169 56.0524 654.337 64.6999L633.352 71.4199C632.268 66.2106 630.051 62.3557 626.701 59.8552C623.45 57.3547 619.509 56.1045 614.879 56.1045C608.869 56.1045 604.239 58.3445 600.987 62.8245C597.835 67.3046 596.258 73.2432 596.258 80.6405C596.258 88.5586 597.982 94.6536 601.431 98.9252C604.977 103.093 609.559 105.176 615.174 105.176C620.199 105.176 624.238 103.822 627.292 101.113C630.347 98.3001 632.416 94.5494 633.499 89.861L654.484 96.581C653.499 100.853 651.775 104.76 649.312 108.302C646.849 111.74 643.893 114.709 640.445 117.21C636.997 119.606 633.056 121.482 628.623 122.836C624.288 124.19 619.608 124.868 614.583 124.868C608.376 124.868 602.761 123.826 597.736 121.742C592.712 119.658 588.377 116.741 584.731 112.99C581.185 109.136 578.426 104.551 576.456 99.2378C574.584 93.8201 573.648 87.8293 573.648 81.2656Z" fill="#1E1E1E"/>
+        </svg>
+        
     </div>
+    <!-- <img src="img/design.svg" alt="" class="w-72 lg:w-[654px] 2xl:w-[875px] " /> -->
+
     <!-- Rotating Eye Animation -->
     <div class="flex items-center justify-end">
       <ul>
@@ -271,39 +212,39 @@
       <div class="p-2 px-4 lg:px-0">
         <h2 class="lg:text-center skew-up">Strategy</h2>
         <ul class="lg:flex space-y-3  lg:space-y-0 items-center justify-center gap-x-3 text-sm">
-          <li>• Design thinking</li>
-          <li>• Requirement Analysis</li>
-          <li>• UX Research</li>
-          <li>• Design Sprint Planning</li>
+          <li class="skew-up">• Design thinking</li>
+          <li class="skew-up">• Requirement Analysis</li>
+          <li class="skew-up">• UX Research</li>
+          <li class="skew-up">• Design Sprint Planning</li>
         </ul>
       </div>
       <div class="p-2 px-4 lg:px-0">
         <h2 class="lg:text-center skew-up">Product</h2>
         <ul class="lg:flex space-y-3 lg:space-y-0 items-center justify-center gap-x-3 text-sm">
-          <li>• Hi-Fi Designs</li>
-          <li>• Interactive Prototypes</li>
-          <li>• Design Systems</li>
-          <li>• Design Sprint Planning</li>
+          <li class="skew-up">• Hi-Fi Designs</li>
+          <li class="skew-up">• Interactive Prototypes</li>
+          <li class="skew-up">• Design Systems</li>
+          <li class="skew-up">• Design Sprint Planning</li>
         </ul>
       </div>
       <div class="p-2 px-4 lg:px-0">
         <h2 class="lg:text-center skew-up">Application</h2>
         <ul class="lg:flex space-y-3 lg:space-y-0 items-center justify-center gap-x-3 text-sm">
-          <li>• Web 3.0</li>
-          <li>• SaaS</li>
-          <li>• Fintech</li>
-          <li>• Data Visualisation</li>
-          <li>• Dashboards</li>
-          <li>• Native Mobile Applications</li>
+          <li class="skew-up">• Web 3.0</li>
+          <li class="skew-up">• SaaS</li>
+          <li class="skew-up">• Fintech</li>
+          <li class="skew-up">• Data Visualisation</li>
+          <li class="skew-up">• Dashboards</li>
+          <li class="skew-up">• Native Mobile Applications</li>
         </ul>
       </div>
       <div class="p-2 px-4 lg:px-0">
         <h2 class="lg:text-center skew-up">Marketing</h2>
         <ul class="lg:flex space-y-3 lg:space-y-0 items-center justify-center gap-x-3 text-sm">
-          <li>• Landing Pages</li>
-          <li>• Websites</li>
-          <li>• Conversion Rate Optimisation</li>
-          <li>• Micro Interactions</li>
+          <li class="skew-up">• Landing Pages</li>
+          <li class="skew-up">• Websites</li>
+          <li class="skew-up">• Conversion Rate Optimisation</li>
+          <li class="skew-up">• Micro Interactions</li>
         </ul>
       </div>
     </div>
@@ -314,7 +255,7 @@
   <div class="lg:mt-32 lg:px-20" id="work">
 
     <div class="d-flex  service px-4 lg:px-0">
-      <h2 class="skew-up">Work</h2>
+      <h2 class="skew-up pt-12 lg:pt-0">Work</h2>
     </div>
     <div class="px-4  lg:px-0  lg:w-1/2 mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
       <div>
@@ -322,13 +263,13 @@
           class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
           Web 3.0
         </h2>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
           Bloquity
         </p>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
           D3 Network
         </p>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
           Aitheon
         </p>
       </div>
@@ -337,13 +278,13 @@
           class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
           Enterprise
         </h2>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
           NCR - National Cash Register
         </p>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
           SCTE
         </p>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
           GS1 Global
         </p>
       </div>
@@ -352,13 +293,13 @@
           class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
           Tech
         </h2>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2 mt-3">
           Upland Software
         </p>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
           Toyota
         </p>
-        <p class="font-inter text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
+        <p class="font-inter skew-up text-xs font-normal leading-[18px] tracking-[-0.011em] text-left mb-2">
           Bloquity
         </p>
       </div>
@@ -382,37 +323,92 @@
   <div id="myModal" class="modal">
     <div class="modal-content">
       <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
-        <h3 class="font-medium text-base text-end w-1/2 ml-14  leading-[24px]">WORK</h3>
+        <h3 class="font-medium text-base text-end w-1/2 ml-14  leading-[24px] skew-up ">WORK</h3>
         <div class="flex items-center w-1/2 justify-end ">
           <img src="img/crossbutton.svg" class="close pr-2 lg:pr-6" alt="Bloquty" />
         </div>
       </div>
       <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
-        <p class="font-bold text-base text-center   leading-[24px]">
+        <p class="font-bold text-base text-center skew-up  leading-[24px]">
           Bloquity - Web 3.0 real estate
         </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-         <li class="text-sm leading-[21px] font-medium">Design System</li>
-         <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
-         <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-         <li class="text-sm leading-[21px] font-medium">Animations</li>
-         <li class="text-sm leading-[21px] font-medium">Web App</li>
-         <li class="text-sm leading-[21px] font-medium">Dashboard</li>
-        </ul>
-     
-      </div>
-      <img src="img/work1.svg" class="w-full " alt="Bloquty" />
-      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
-        <p class="font-medium text-base text-center leading-[24px]">
-          Crypto Exchange
-        </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
           <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+        </ul>
+        
+        
+      </div>
+      <img src="img/work1.svg" class="w-full " alt="Bloquty" />
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+        Canva
+        </p>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+    
+         </ul>
+        <img src="img/work8.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          SXM
+        </p>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+    
+          <li class="text-sm leading-[21px] font-medium no-bullet">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          
+         </ul>
+        <img src="img/xsmfull.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div> 
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          The New York Sun
+        </p>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Web design</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+          <li class="text-sm leading-[21px] font-medium">Frontend Development</li>
+      
+ 
+         </ul>
+        <img src="img/work10.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div> 
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Shoplift
+        </p>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+       
+          <li class="text-sm leading-[21px] font-medium no-bullet">Landing Pages</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
+          <li class="text-sm leading-[21px] font-medium">Animations</li>
+         </ul>
+        <img src="img/work4.png" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div> 
+      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+        <p class="font-medium text-base text-center leading-[24px]">
+          Prophet
+        </p>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+          <li class="text-sm leading-[21px] font-medium">Web App</li>
+          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+          <li class="text-sm leading-[21px] font-medium">Frontend development</li>
+          
+        
+       
          </ul>
         <img src="img/crypto.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
@@ -420,76 +416,47 @@
         <p class="font-medium text-base text-center leading-[24px]">
           Wove
         </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-          <li class="text-sm leading-[21px] font-medium">Animations</li>
-          <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+    
          </ul>
         <img src="img/work3.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
-      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
-        <p class="font-medium text-base text-center leading-[24px]">
-          Shoplift
-        </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
-          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
-          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-          <li class="text-sm leading-[21px] font-medium">Animations</li>
-          <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
-         </ul>
-        <img src="img/work4.png" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
-      </div>    <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
+ 
+          <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Matchr
         </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
-          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
-          <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+          <li class="text-sm leading-[21px] font-medium">Marketing Graphics</li>
          </ul>
         <img src="img/work5.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>    <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Xsocial
         </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
+          <li class="text-sm leading-[21px] font-medium">Mobile App</li>
          </ul>
         <img src="img/xsocial.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
-      </div>    <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
-        <p class="font-medium text-base text-center leading-[24px]">
-        Canva
-        </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
-          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
-          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-          <li class="text-sm leading-[21px] font-medium">Animations</li>
-          <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
-         </ul>
-        <img src="img/work8.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
-      </div>  
+      </div>   
+  
         <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Q loop
         </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
-          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
@@ -497,48 +464,19 @@
          </ul>
         <img src="img/work9.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
-      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
-        <p class="font-medium text-base text-center leading-[24px]">
-          The New York Sun
-        </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
-          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
-          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-          <li class="text-sm leading-[21px] font-medium">Animations</li>
-          <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
-         </ul>
-        <img src="img/work10.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
-      </div>   
+   >   
        <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
-          SXM
+          Simplero
         </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
-          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
+        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium no-bullet">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-          <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
          </ul>
-        <img src="img/xsmfull.svg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        <img src="img/simple.svg" class="w-full pt-6 pb-8 lg:pb-24 lg:pt-16" alt="Bloquty" />
       </div>
-      <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
-        <p class="font-medium text-base text-center leading-[24px]">
-          SXM
-        </p>
-        <ul class="list-disc flex items-center justify-center gap-x-8 py-2">
-          <li class="text-sm leading-[21px] font-medium">Design System</li>
-          <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
-          <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-          <li class="text-sm leading-[21px] font-medium">Animations</li>
-          <li class="text-sm leading-[21px] font-medium">Web App</li>
-          <li class="text-sm leading-[21px] font-medium">Dashboard</li>
-         </ul>
-        <img src="img/work11.svg" class="w-full pt-6 lg:pt-16 pb-8" alt="Bloquty" />
-      </div>
+
     </div>
   </div>
 
@@ -547,7 +485,7 @@
   <!-- Work Ends -->
  <!-- Testimonials -->
  <div class="flex items-center justify-center h-[50vh]  lg:h-[100vh]">
-  <div class="lg:px-20 w-full">
+  <div id="testimonialBox" class="lg:px-20 w-full">
     <div id="carouselExampleIndicators" class="carousel lg:w-1/3 lg:mx-auto slide" data-ride="carousel">
       <ol class="carousel-indicators left-[80%] cursor-pointer lg:left-[80%] lg:right-[0%]">
         <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
@@ -569,7 +507,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial lg:w-[347px] px-4 lg:px-0">
-            <p>
+            <p class="">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's,
             </p>
@@ -579,7 +517,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial lg:w-[347px] px-4 lg:px-0">
-            <p>
+            <p class="">
               They are amazing! I highly recommend using them as they did an
               amazing job on my UX/UI design. I will be back.
             </p>
@@ -589,7 +527,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial lg:w-[347px] px-4 lg:px-0">
-            <p>
+            <p class="">
               They are amazing! I highly recommend using them as they did an
               amazing job on my UX/UI design. I will be back.
             </p>
@@ -599,7 +537,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial lg:w-[347px] px-4 lg:px-0">
-            <p>
+            <p class="">
               They are amazing! I highly recommend using them as they did an
               amazing job on my UX/UI design. I will be back.
             </p>
@@ -630,34 +568,36 @@
     <div class="flex space-y-4 flex-col lg:flex-row justify-between py-20">
       <div class="px-4 lg:px-0 lg:translate-y-4 lg:w-[45%]">
         <div class="flex justify-between">
-          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">
+          <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
             Concept
           </h2>
-          <h3 class="lg:mr-[90px]">
-            <span class="font-medium text-xl lg:text-3xl leading-12">$2K</span>
-            <span class="text-sm font-normal"> fixed</span>
+          <h3 class="lg:mr-[90px] flex items-center gap-x-1">
+            <span class="font-medium text-lg md:text-xl lg:text-3xl leading-12  skew-up">$2K</span>
+            <sub class="text-sm font-normal   skew-up"> fixed</sub>
           </h3>
         </div>
         <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
         <div class="flex md:justify-end lg:mr-6 mt-7">
           <ul class="space-y-3 font-normal text-sm">
-            <li>• Delivered in 5 days</li>
-            <li>• Main screens</li>
-            <li>• Presentable Prototype</li>
-            <li>• Development-ready </li>
+            <li class="skew-up">• Delivered in 5 days</li>
+            <li class="skew-up">• Main screens</li>
+            <li class="skew-up">• Presentable Prototype</li>
+            <li class="skew-up">• Development-ready </li>
 
-            <div class="mt-6">
-          
-              <button  class="link link--iocaste !outline-none">
-                <span class=" px-2 py-2 mt-3 text-sm font-medium">Get started</span>
-                <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
-                  preserveAspectRatio="none">
-                  <path
-                    d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
-                  </path>
-                </svg>
-              </button>
-            </div>
+  
+              <li class="content__underline  ml-[2px]">
+                <a href="#" class="link link--iocaste">
+                  <span class="text-black font-medium text-sm mt-3 leading-5">Get started</span>
+                  <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
+                    preserveAspectRatio="none">
+                    <path
+                      d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+              
+     
           </ul>
         </div>
       </div>
@@ -666,33 +606,33 @@
 
       <div class="px-4 lg:px-0 lg:w-[45%]">
         <div class="flex items-center justify-between">
-          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">
+          <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
             Design Support
           </h2>
-          <h3 class=" lg:mr-[85px]">
-            <span class="font-medium text-xl lg:text-3xl leading-12">$5K</span>
-            <span class="text-sm font-normal"> per month</span>
+          <h3 class=" lg:mr-[80px] flex items-center gap-x-1">
+            <span class="font-medium text-lg md:text-xl lg:text-3xl leading-12 skew-up">$5K</span>
+            <sub class="text-sm font-normal skew-up"> per month</sub>
           </h3>
         </div>
         <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
         <div class="flex md:justify-end  mt-7">
           <ul class="space-y-3 font-normal text-sm">
-            <li>• Part-time engagement</li>
-            <li>• Pause or cancel anytime</li>
-            <li>• Unlimited requests & revisions</li>
-            <li>• Async communication</li>
-            <li>• One request at a time</li>
-            <div class="mt-6">
-              <button  class="link link--iocaste !outline-none">
-                <span class=" px-2 py-2 mt-3 text-sm font-medium">Get started</span>
+            <li class="skew-up">• Part-time engagement</li>
+            <li class="skew-up">• Pause or cancel anytime</li>
+            <li class="skew-up">• Unlimited requests & revisions</li>
+            <li class="skew-up">• Async communication</li>
+            <li class="skew-up">• One request at a time</li>
+            <li class="content__underline  ml-[2px]">
+              <a href="#" class="link link--iocaste">
+                <span class="text-black font-medium text-sm mt-3 leading-5">Get started</span>
                 <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
                   preserveAspectRatio="none">
                   <path
                     d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0">
                   </path>
                 </svg>
-              </button>
-            </div>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -701,20 +641,20 @@
     <div class="flex space-y-4 flex-col lg:flex-row justify-between pb-20">
       <div class="px-4 lg:px-0 lg:translate-y-4 lg:w-[45%]">
         <div class="flex items-center justify-between">
-          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">MVP</h2>
-          <h3 class="lg:mr-[77px]">
-            <span class="font-medium text-xl lg:text-3xl leading-12">$15K</span>
-            <span class="text-sm font-normal"> fixed</span>
+          <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">MVP</h2>
+          <h3 class="lg:mr-[77px] flex items-center gap-x-1">
+            <span class="font-medium text-lg md:text-xl lg:text-3xl skew-up leading-12">$15K</span>
+            <sub class="text-sm font-normal skew-up"> fixed</sub>
           </h3>
         </div>
         <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
         <div class="flex md:justify-end lg:mr-[15px] mt-7">
           <ul class="space-y-3 font-normal text-sm">
-            <li>• Full-time engagement</li>
-            <li>• Delivered in 3-5 weeks</li>
-            <li>• Complete MVP</li>
-            <li>• Design System included</li>
-            <li>• Daily updates</li>
+            <li class="skew-up">• Full-time engagement</li>
+            <li class="skew-up">• Delivered in 3-5 weeks</li>
+            <li class="skew-up">• Complete MVP</li>
+            <li class="skew-up">• Design System included</li>
+            <li class="skew-up">• Daily updates</li>
             <div class=" translate-y-3">
               <!-- <a href="#" class="px-2 py-2  text-sm text-[#454545] font-light">Book a call</a> -->
             </div>
@@ -725,20 +665,20 @@
 
       <div class="px-4 lg:px-0 lg:w-[45%]">
         <div class="flex justify-between">
-          <h2 class="font-extralight skew-up text-xl lg:text-3xl leading-12">
+          <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
             Large Scale
           </h2>
-          <h3 class="lg:mr-[80px]">
-            <span class="font-medium text-xl lg:text-3xl leading-12">$40K</span>
-            <span class="text-sm font-normal">starting</span>
+          <h3 class="lg:mr-[80px] flex items-center gap-x-1">
+            <span class="font-medium text-lg md:text-xl lg:text-3xl skew-up leading-12">$40K</span>
+            <sub class="text-sm font-normal skew-up">starting</sub>
           </h3>
         </div>
         <div class="mt-3 h-[1px] bg-[#0000001F]"></div>
         <div class="flex md:justify-end lg:mr-6 mt-7">
           <ul class="space-y-3 font-normal text-sm">
-            <li>• Dedicated Team</li>
-            <li>• End to end design delivery </li>
-            <li>• Detailed calls</li>
+            <li class="skew-up">• Dedicated Team</li>
+            <li class="skew-up">• End to end design delivery </li>
+            <li class="skew-up">• Detailed calls</li>
             <div class="translate-y-3">
               <!-- <a href="#" class="px-2 py-2 mt-3 text-sm text-[#454545] font-light">Book a call</a> -->
             </div>
@@ -759,8 +699,12 @@
 
       <div class="lg:px-20">
         <button
-          class="accordion  font-extralight !outline-none !text-[#000000] px-0  pb-2  text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">How
-          does it work?</button>
+          class="accordion flex  font-extralight !outline-none !text-[#000000] px-0  pb-2  text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">
+        <span class="skew-up ">
+          How
+          does it work?
+        </span>
+        </button>
 
         <div class="panel">
           <p class="font-normal text-sm leading-[24px] text-[#475569] py-4">Offers a comprehensive range of design
@@ -772,8 +716,12 @@
             the design until it meets your satisfaction.</p>
         </div>
         <button
-          class="accordion  font-extralight !outline-none !text-[#000000] mt-3 py-4  px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">Can
-          I see examples of your previous work?</button>
+          class="accordion flex font-extralight !outline-none !text-[#000000] mt-3 py-4  px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">
+          <span class="skew-up ">
+          Can
+          I see examples of your previous work?
+          </span>
+        </button>
         <div class="panel">
           <p class="font-normal  text-sm  text-[#475569]  py-4 leading-[24px]">Offers a comprehensive range of design
             services
@@ -784,8 +732,11 @@
             the design until it meets your satisfaction.</p>
         </div>
         <button
-          class="accordion  font-extralight !outline-none !text-[#000000] py-2 mt-3  px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">Can
-          I request revisions to design?</button>
+          class="accordion flex font-extralight !outline-none !text-[#000000] py-2 mt-3  px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">
+          <span class="skew-up ">
+          Can
+          I request revisions to design?
+        <span></button>
         <div class="panel">
           <p class="font-normal text-sm  text-[#475569] py-4 leading-[24px]">Offers a comprehensive range of design
             services
@@ -796,8 +747,11 @@
             the design until it meets your satisfaction.</p>
         </div>
         <button
-          class="accordion  font-extralight !outline-none !text-[#000000] py-2  mt-3 px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">
-          How do I get started with</button>
+          class="accordion flex  font-extralight !outline-none !text-[#000000] py-2  mt-3 px-0   text-lg lg:text-2xl leading-7 lg:leading-10 uppercase">
+          <span class="skew-up ">
+          How do I get started with
+          </span>
+        </button>
         <div class="panel">
           <p class="font-normal text-sm py-4 leading-[24px] text-[#475569] ">Offers a comprehensive range of design
             services
@@ -825,16 +779,16 @@
           <div class="hidden lg:block">
             <ul class="flex flex-wrap px-2  lg:px-0 lg:justify-content-end f-nav">
               <li class="nav-item">
-                <a class="nav-link " href="#">INSIGHTS</a>
+                <a class="nav-link skew-up " href="#">INSIGHTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">EXPERIMENTS</a>
+                <a class="nav-link skew-up" href="#">EXPERIMENTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">MENTORSHIP</a>
+                <a class="nav-link skew-up" href="#">MENTORSHIP</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scroll-link" href="#pricing">PRICING</a>
+                <a class="nav-link scroll-link skew-up" href="#pricing">PRICING</a>
               </li>
             </ul>
           </div>
@@ -843,7 +797,7 @@
 
         <li class="relative  flex">
           <a href="#" class="link link--iocaste">
-            <span class="text-white text-4xl  font-bold leading-5">BOOK A CALL</span>
+            <span class="text-white text-4xl   font-bold leading-5">BOOK A CALL</span>
             <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
               preserveAspectRatio="none">
               <path
@@ -858,16 +812,16 @@
       <div class="lg:hidden">
         <ul class="flex flex-wrap px-4 justify-between  lg:px-0 lg:justify-content-end f-nav">
           <li class="nav-item">
-            <a class="text-white" href="#">INSIGHTS</a>
+            <a class="text-white skew-up" href="#">INSIGHTS</a>
           </li>
           <li class="nav-item">
-            <a class="" href="#">EXPERIMENTS</a>
+            <a class="skew-up" href="#">EXPERIMENTS</a>
           </li>
           <li class="nav-item">
-            <a class="" href="#">MENTORSHIP</a>
+            <a class="skew-up" href="#">MENTORSHIP</a>
           </li>
           <li class="nav-item">
-            <a class="scroll-link" href="#pricing">PRICING</a>
+            <a class="scroll-link skew-up" href="#pricing">PRICING</a>
           </li>
         </ul>
       </div>
@@ -882,7 +836,7 @@
 
     <div class="flex items-center px-4 lg:px-0  lg:-translate-y-10 lg:mt-0 justify-end">
 
-      <p class="font-normal  text-xs leading-5">© DESIGN INC 2024 </br>
+      <p class="font-normal   text-xs leading-5">© DESIGN INC 2024 </br>
         ALL RIGHTS RESERVED</p>
     </div>
   </div>
@@ -911,29 +865,14 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const section = document.getElementById('crafting-section');
-      const heading = section.querySelector('.crafting-heading');
-  
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            heading.classList.add('crafting-animate');
-          } else {
-            heading.classList.remove('crafting-animate'); // Reset animation when not in view
-          }
-        });
-      }, {
-        threshold: 0.5 // Adjust this value as needed
-      });
-  
-      observer.observe(section);
-    });
-  </script>
+
   
 
   <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/text_animation.js"></script>
+  <script type="module" src="js/text_animation.js"></script>
+
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
