@@ -124,7 +124,41 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   // <!-- JavaScript to control modal behavior end -->
+ // <!-- pricing modal  -->
+var buttons = document.getElementsByClassName("pricingButton");
 
+var priceModal = document.getElementById("pricingModal");
+var priceCloseBtn = priceModal.querySelector(".close");
+
+function openModal() {
+  priceModal.style.display = "block";
+  setTimeout(function () {
+    priceModal.querySelector(".modal-content").classList.add("show");
+  }, 100);
+}
+
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].onclick = openModal;
+}
+
+function closeModal() {
+  priceModal.style.display = "none";
+  priceModal.querySelector(".modal-content").classList.remove("show");
+}
+
+window.onclick = function (event) {
+  if (event.target == priceModal) {
+    closeModal();
+  }
+};
+
+// Attach click event listener to close button
+priceCloseBtn.onclick = closeModal;
+
+ 
+
+
+// <!-- pricing modal end -->
   // <!-- scrolling-->
     $(document).ready(function() {
         $("a.scroll-link[href^='#']").click(function(e) {

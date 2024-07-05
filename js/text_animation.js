@@ -136,13 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   
-  gsap.from("#testimonialBox", {
-    y: 100,
-    duration: 1,
-    opacity: 0, // Optionally add opacity or other properties
+  
+
+  gsap.from("#testimonialBox",{
+    y:100,
+    duration:1,
     scrollTrigger: {
-        trigger: "#testimonialBox",
-        start: "top 90%", // Adjusted start position
-        // You can add more ScrollTrigger options as needed
+        trigger: "#testimonialBox", // Element to watch
+        start: "top 80%", // Start the animation when top of testimonialBox is 80% in view
     }
-});
+    
+  })
