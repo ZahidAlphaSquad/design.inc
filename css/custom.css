@@ -61,6 +61,12 @@ a:hover {
   text-transform: uppercase;
   margin-bottom: 64px;
 }
+@media (max-width: 992px){
+  .service {
+  
+    margin-bottom: 24px;
+  }
+}
 .service > h2 {
   font-family: Inter;
   font-size: 16px;
@@ -698,13 +704,12 @@ body.menu-open .menu-link {
   left: 0;
   top: 0;
   border-radius: 0%;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%; 
+  height: 100%; 
   overflow: auto; 
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   overflow-y: scroll;
-  transition: opacity 0.2s ease; /* Transition for smooth fade-in/out */
+  transition: opacity 0.2s ease; 
+  border: 0px;
 }
 
 .modal-content {
