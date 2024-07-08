@@ -1,3 +1,10 @@
+
+
+  .no-scroll {
+    position: fixed;
+    width: 100%;
+  }
+
 @font-face {
   font-family: "Bauziet Norm";
   src: url("../fonts/Bauziet-Norm-Bold.ttf");

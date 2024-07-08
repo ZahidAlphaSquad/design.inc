@@ -14,8 +14,10 @@
   <link rel="stylesheet" type="text/css" href="css/custom.css" />
   <link rel="stylesheet" type="text/css" href="css/text-animation.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+
+
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -46,12 +48,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
 
-  <!-- Cal element-click embed code ends -->
+  <style>
+   
+  
+    .dot {
+      position: relative;
+      display: inline-block;
+      width: 0.2em;
+      height: 0.2em;
+      background: white;
+      border-radius: 50%;
+      transform: scale(1);
+      transition: transform 15s ease(0.165, 0.84, 0.44, 1); /* Custom easing function */
+    }
+  </style>
 </head>
 
-<body>
+<body >
   <!-- mobile screen menu -->
   <!-- mobile screen menu -->
+  <div class="splash-screen main-head px-4 py-4 lg:px-20 lg:py-12 fixed top-0 left-0 w-screen h-screen bg-black text-white z-[9999]  font-extrabold transition-opacity duration-1000 ease-out" id="splash-screen">
+    <h2 class="text-[54px] md:text-[160px] lg:text-[190px]">design<span class="dot "></span>inc</h2>
+  </div>
+  <div class="d-flex flex-column text-5xl lg:text-9xl main-head  leading-16">
+  </div>
   <nav id="menu"
     class="menu hidden fixed inset-0 lg:hidden w-full h-full bg-[rgba(250,250,250)] flex flex-col justify-center items-center z-[1000] text-black">
     <span class="menu__item oh uppercase"><a class="menu__item-link oh__inner close-menu-link"
@@ -290,7 +310,8 @@
     <div class="d-flex  service  px-4 lg:px-0">
       <h2 class="skew-up pt-12 lg:pt-0">Work</h2>
     </div>
-    <div class="px-4 space-y-4 lg:space-y-0 lg:px-0   lg:w-1/2 mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
+    <div
+      class="px-4 space-y-4 lg:space-y-0 lg:px-0   lg:w-1/2 mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
       <div>
         <h2
           class="font-inter skew-up text-2xl lg:text-3xl font-extralight leading-8 lg:leading-[48px] tracking-[-0.011em] text-left">
@@ -353,12 +374,13 @@
     </div>
   </div>
   <!-- modal -->
-  <div id="myModal"  class="modal">
+  <div id="myModal" class="modal">
     <div class="modal-content">
       <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
         <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] skew-up ">WORK</h3>
         <div class="flex items-center w-1/2 justify-end ">
-          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6" alt="Bloquty" />
+          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
+            alt="Bloquty" />
         </div>
       </div>
       <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
@@ -498,7 +520,7 @@
         </ul>
         <img src="img/work10.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
-      
+
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Simplero
@@ -600,27 +622,31 @@
     <div class="flex space-y-4 flex-col lg:flex-row justify-between py-20">
       <div class="px-4 lg:px-0 lg:translate-y-4 lg:w-[45%]">
         <div class="flex justify-between">
-         <div class="flex items-center gap-x-2">
-          <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
-            Concept
-          </h2>
-          <button id="testimonialBox" class="pricingButton !outline-none">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1223_5867)">
-              <path d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z" fill="#2C3E50"/>
-              <path d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z" fill="#2C3E50"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_1223_5867">
-              <rect width="32" height="32" fill="white"/>
-              </clipPath>
-              </defs>
+          <div class="flex items-center gap-x-2">
+            <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
+              Concept
+            </h2>
+            <button id="testimonialBox" class="pricingButton !outline-none">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1223_5867)">
+                  <path
+                    d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z"
+                    fill="#2C3E50" />
+                  <path
+                    d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z"
+                    fill="#2C3E50" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1223_5867">
+                    <rect width="32" height="32" fill="white" />
+                  </clipPath>
+                </defs>
               </svg>
-              
-          </button>
-     
-            
-         </div>
+
+            </button>
+
+
+          </div>
           <h3 class="lg:mr-[90px] flex items-center gap-x-1">
             <span class="font-medium text-lg md:text-xl lg:text-3xl leading-12  skew-up">$2K</span>
             <sub class="text-sm font-normal   skew-up"> fixed</sub>
@@ -656,7 +682,7 @@
 
       <div class="px-4 lg:px-0 lg:w-[45%]">
         <div class="flex items-center justify-between">
-     
+
           <div class="flex items-center gap-x-2">
             <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
               Design Support
@@ -664,20 +690,24 @@
             <button class="pricingButton !outline-none">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1223_5867)">
-                <path d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z" fill="#2C3E50"/>
-                <path d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z" fill="#2C3E50"/>
+                  <path
+                    d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z"
+                    fill="#2C3E50" />
+                  <path
+                    d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z"
+                    fill="#2C3E50" />
                 </g>
                 <defs>
-                <clipPath id="clip0_1223_5867">
-                <rect width="32" height="32" fill="white"/>
-                </clipPath>
+                  <clipPath id="clip0_1223_5867">
+                    <rect width="32" height="32" fill="white" />
+                  </clipPath>
                 </defs>
-                </svg>
-                
-                
+              </svg>
+
+
             </button>
-              
-           </div>
+
+          </div>
           <h3 class=" lg:mr-[80px] flex items-center gap-x-1">
             <span class="font-medium text-lg md:text-xl lg:text-3xl leading-12 skew-up">$5K</span>
             <sub class="text-sm font-normal skew-up"> per month</sub>
@@ -714,22 +744,26 @@
             <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
               MVP
             </h2>
-            <button class="pricingButton !outline-none">
+            <button id="mvpBtn" class=" !outline-none">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1223_5867)">
-                <path d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z" fill="#2C3E50"/>
-                <path d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z" fill="#2C3E50"/>
+                  <path
+                    d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z"
+                    fill="#2C3E50" />
+                  <path
+                    d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z"
+                    fill="#2C3E50" />
                 </g>
                 <defs>
-                <clipPath id="clip0_1223_5867">
-                <rect width="32" height="32" fill="white"/>
-                </clipPath>
+                  <clipPath id="clip0_1223_5867">
+                    <rect width="32" height="32" fill="white" />
+                  </clipPath>
                 </defs>
-                </svg>
-                
+              </svg>
+
             </button>
-              
-           </div>
+
+          </div>
           <h3 class="lg:mr-[77px] flex items-center gap-x-1">
             <span class="font-medium text-lg md:text-xl lg:text-3xl skew-up leading-12">$15K</span>
             <sub class="text-sm font-normal skew-up"> fixed</sub>
@@ -754,27 +788,31 @@
 
       <div class="px-4 lg:px-0 lg:w-[45%]">
         <div class="flex justify-between">
-       
+
           <div class="flex  items-center gap-x-2">
             <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
-              Large Scale      MVP
+              Large Scale MVP
             </h2>
             <button class="pricingButton !outline-none">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1223_5867)">
-                <path d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z" fill="#2C3E50"/>
-                <path d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z" fill="#2C3E50"/>
+                  <path
+                    d="M23.0202 9.68693C23.2155 9.49167 23.2155 9.17508 23.0202 8.97982C22.825 8.78456 22.5084 8.78456 22.3131 8.97982L23.0202 9.68693ZM22.3131 8.97982L8.97979 22.3132L9.6869 23.0203L23.0202 9.68693L22.3131 8.97982Z"
+                    fill="#2C3E50" />
+                  <path
+                    d="M22.6667 9.33337H23.1667C23.1667 9.05723 22.9428 8.83337 22.6667 8.83337V9.33337ZM22.1667 21.3334C22.1667 21.6095 22.3905 21.8334 22.6667 21.8334C22.9428 21.8334 23.1667 21.6095 23.1667 21.3334H22.1667ZM10.6667 9.83337H22.6667V8.83337H10.6667V9.83337ZM22.1667 9.33337V21.3334H23.1667V9.33337H22.1667Z"
+                    fill="#2C3E50" />
                 </g>
                 <defs>
-                <clipPath id="clip0_1223_5867">
-                <rect width="32" height="32" fill="white"/>
-                </clipPath>
+                  <clipPath id="clip0_1223_5867">
+                    <rect width="32" height="32" fill="white" />
+                  </clipPath>
                 </defs>
-                </svg>
-                
+              </svg>
+
             </button>
-              
-           </div>
+
+          </div>
           <h3 class="lg:mr-[80px] flex items-center gap-x-1">
             <span class="font-medium text-lg md:text-xl lg:text-3xl skew-up leading-12">$40K</span>
             <sub class="text-sm font-normal skew-up">starting</sub>
@@ -796,17 +834,18 @@
       </div>
     </div>
   </div>
-  <!-- pricing modal -->
-  <div id="pricingModal" class="modal">
+
+ <div  id="pricingModal" class="modal">
     <div class="modal-content">
       <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
-        <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] ">Design  Support</h3>
+        <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] ">Design Support</h3>
         <div class="flex items-center w-1/2 justify-end ">
-          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6" alt="Bloquty" />
+          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
+            alt="Bloquty" />
         </div>
       </div>
       <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
-       
+
         <ul class="list-disc flex  flex-wrap  gap-x-8 py-2 items-center lg:items-start justify-center">
           <li class="text-lg leading-[33px] font-normal no-bullet">Brand Design</li>
           <li class="text-lg leading-[33px] font-normal">Landing Pages</li>
@@ -823,40 +862,102 @@
 
       </div>
       <div class="px-12 lg:px-32 mt-8 lg:mt-12 xl:mt-16">
-       
+
         <img src="img/price2.jpg" class="w-full " alt="1" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
-       
+
         <img src="img/price3.jpg" class="w-full " alt="2" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
-       
+
         <img src="img/price4.jpg" class="w-full " alt="3" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
-       
+
         <img src="img/price5.jpg" class="w-full " alt="4" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
-       
+
         <img src="img/price6.jpg" class="w-full " alt="5" />
       </div>
-     
+
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
-       
+
         <img src="img/price8.jpg" class="w-full " alt="7" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16 pb-8 lg:pb-16">
-       
+
         <img src="img/price9.jpg" class="w-full " alt="8" />
       </div>
 
-   
+
+
+    </div>
+  </div> 
+  <!-- design and support modal end -->
+   <!-- MVP modal -->
+  <div   id="mvpModal" class="modal">
+    <div class="modal-content">
+      <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
+        <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] ">MVP</h3>
+        <div class="flex items-center w-1/2 justify-end ">
+          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
+            alt="Bloquty" />
+        </div>
+      </div>
+      <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
+
+        <ul class="list-disc flex  flex-wrap  gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-lg leading-[33px] font-normal no-bullet">Requirement Analysis</li>
+          <li class="text-lg leading-[33px] font-normal">User stories</li>
+          <li class="text-lg leading-[33px] font-normal">Sprint Planning</li>
+          <li class="text-lg leading-[33px] font-normal">UX Research</li>
+          <li class="text-lg leading-[33px] font-normal">Design System</li>
+          <li class="text-lg leading-[33px] font-normal">Wireframing</li>
+          <li class="text-lg leading-[33px] font-normal">Product Design</li>
+          <li class="text-lg leading-[33px] font-normal">Prototyping</li>
+          <li class="text-lg leading-[33px] font-normal">User Testing</li>
+
+
+        </ul>
+        <img loading="lazy" src="img/mvp1.jpg" class="w-full lg:mt-16" alt="Bloquty" />
+
+
+      </div>
+      <div class="px-12 lg:px-32 mt-8 lg:mt-12 xl:mt-16">
+
+        <img src="img/mvp2.jpg" class="w-full " alt="1" />
+      </div>
+      <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
+
+        <img src="img/mvp3.jpg" class="w-full " alt="2" />
+      </div>
+      <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
+
+        <img src="img/mvp4.jpg" class="w-full " alt="3" />
+      </div>
+      <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
+        <div class=" bg-[url('./img/mvp6.png')] bg-no-repeat bg-cover flex items-center justify-center py-12">
+          <video id="myVideo" class="w-1/2 h-full rounded-lg" autoplay controls>
+            <source src="./img/iPad-mini-8.3---60.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    
+      
+      <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
+
+        <img src="img/mvp5.jpg" class="w-full " alt="5" />
+      </div>
+
+      
+
+
 
     </div>
   </div>
-  <!-- pricing modal end -->
+  <!-- MVP modal end -->
   <!-- Pricing Ends -->
   <!-- FAQs -->
   <div class="lg:px-20 lg:mt-48 !z-0 relative">
@@ -935,7 +1036,6 @@
 
     </div>
   </div>
-
 
   <!-- FAQsEnds -->
   <!-- Footer -->
@@ -1035,7 +1135,23 @@
 
 
 
-
+  <!-- <script>
+    $(document).ready(function () {
+      gsap.to(".dot", {
+        scale: 200,
+        duration: 10,
+        delay: 0.3,
+        ease: "power4.out",
+        onComplete: function () {
+          $('#splash-screen').addClass('hidden');
+        }
+      });
+  
+      setTimeout(function () {
+        $('#splash-screen').addClass('hidden');
+      }, 1500);
+    });
+  </script> -->
   <script type="module" src="js/index.js"></script>
   <script type="module" src="js/text_animation.js"></script>
   <script type="module" src="js/bookAcall.js"></script>
@@ -1052,6 +1168,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </body>
 
 </html>
