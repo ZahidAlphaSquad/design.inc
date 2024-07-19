@@ -58,27 +58,50 @@
 //     }
     
 //   })
-
+// font-family loading
 $(document).ready(function () {
-  gsap.to(".dot", {
-    scale: 200,
-    duration: 10,
-    delay: 0.3,
-    ease: "power4.out",
-    onComplete: function () {
-      $('#splash-screen').addClass('hidden');
-      // Start your main page animation after splash screen animation completes
-      startMainPageAnimation();
-    }
-  });
+  document.fonts.load('10pt "Bauziet Norm"').then(function () {
+      $('.dot').css('opacity', '1');
+      gsap.to(".dot", {
+          scale: 200,
+          duration: 10,
+          delay: 0.3,
+          ease: "power4.out",
+          onComplete: function () {
+              $('#splash-screen').addClass('hidden');
+              startMainPageAnimation();
+          }
+      });
 
-  // Set a timeout to hide the splash screen after a certain duration
-  setTimeout(function () {
-    $('#splash-screen').addClass('hidden');
-    // Start your main page animation after splash screen animation completes
-    startMainPageAnimation();
-  }, 1500);
+      setTimeout(function () {
+          $('#splash-screen').addClass('hidden');
+          startMainPageAnimation();
+      }, 1500);
+  });
 });
+
+// font-family loading end
+
+// $(document).ready(function () {
+//   gsap.to(".dot", {
+//     scale: 200,
+//     duration: 10,
+//     delay: 0.3,
+//     ease: "power4.out",
+//     onComplete: function () {
+//       $('#splash-screen').addClass('hidden');
+//       // Start your main page animation after splash screen animation completes
+//       startMainPageAnimation();
+//     }
+//   });
+
+//   // Set a timeout to hide the splash screen after a certain duration
+//   setTimeout(function () {
+//     $('#splash-screen').addClass('hidden');
+//     // Start your main page animation after splash screen animation completes
+//     startMainPageAnimation();
+//   }, 1500);
+// });
 
 function startMainPageAnimation() {
   // Your main page animations here

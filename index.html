@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="css/custom.css" />
-  <link rel="stylesheet" type="text/css" href="css/text-animation.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
 
@@ -49,8 +48,7 @@
 
 
   <style>
-   
-  
+    
     .dot {
       position: relative;
       display: inline-block;
@@ -60,6 +58,7 @@
       border-radius: 50%;
       transform: scale(1);
       transition: transform 15s ease(0.165, 0.84, 0.44, 1); /* Custom easing function */
+      opacity: 0;
     }
   </style>
 </head>
@@ -68,10 +67,9 @@
   <!-- mobile screen menu -->
   <!-- mobile screen menu -->
   <div class="splash-screen main-head px-4 py-4 lg:px-20 lg:py-12 fixed top-0 left-0 w-screen h-screen bg-black text-white z-[9999]  font-extrabold transition-opacity duration-1000 ease-out" id="splash-screen">
-    <h2 class="text-[54px] md:text-[160px] lg:text-[190px]">design<span class="dot "></span>inc</h2>
+    <h2 class="text-[54px] md:text-[160px] lg:text-[190px]">design<span class="dot"></span>inc</h2>
   </div>
-  <div class="d-flex flex-column text-5xl lg:text-9xl main-head  leading-16">
-  </div>
+ 
   <nav id="menu"
     class="menu hidden fixed inset-0 lg:hidden w-full h-full bg-[rgba(250,250,250)] flex flex-col justify-center items-center z-[1000] text-black">
     <span class="menu__item oh uppercase"><a class="menu__item-link oh__inner close-menu-link"
@@ -104,21 +102,21 @@
     <!-- Navigation -->
     <ul class="items-center  px-4 gap-x-16 lg:px-0 justify-end hidden lg:flex">
       <li class="nav-item">
-        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#services">SERVICES</a>
+        <a class=" text-black font-light text-xs leading-5 scroll-link skew-up" href="#services">SERVICES</a>
       </li>
       <li class="nav-item">
-        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#work">WORK</a>
+        <a class=" text-black font-light text-xs leading-5 scroll-link skew-up" href="#work">WORK</a>
       </li>
       <li class="nav-item">
-        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#pricing">PRICING</a>
+        <a class=" text-black font-light text-xs leading-5 scroll-link skew-up" href="#pricing">PRICING</a>
       </li>
       <li class="nav-item">
-        <a class=" text-black font-light text-xs leading-5 scroll-link" href="#">CONTACT</a>
+        <a class=" text-black font-light text-xs leading-5 scroll-link skew-up" href="#">CONTACT</a>
       </li>
       <!-- underline Animation -->
       <li class="content__underline">
         <a data-cal-link="design.inc/30min" data-cal-config='{"layout":"month_view"}' class="link link--iocaste">
-          <span class="text-black font-medium text-xs leading-5">BOOK A CALL</span>
+          <span class="text-black font-medium text-xs leading-5 skew-up">BOOK A CALL</span>
           <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60"
             preserveAspectRatio="none">
             <path
@@ -177,7 +175,7 @@
 
     <!-- Rotating Eye Animation -->
     <div class="flex items-center justify-end">
-      <ul data-cal-link="design.inc/30min" data-cal-config='{"layout":"month_view"}'>
+      <ul id="testimonialBox" data-cal-link="design.inc/30min" data-cal-config='{"layout":"month_view"}'>
         <li data-cal-link="design.inc/30min" data-cal-config='{"layout":"month_view"}' class="content__eye">
           <button data-cal-link="design.inc/30min" data-cal-config='{"layout":"month_view"}'
             class="button button--surtur">
@@ -373,13 +371,13 @@
       </li>
     </div>
   </div>
-  <!-- modal -->
+  <!--recent work  modal -->
   <div id="myModal" class="modal">
     <div class="modal-content">
       <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
         <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] skew-up ">WORK</h3>
         <div class="flex items-center w-1/2 justify-end ">
-          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
+          <img  src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
             alt="Bloquty" />
         </div>
       </div>
@@ -387,150 +385,167 @@
         <p class="font-bold text-base text-center   leading-[24px]">
           Bloquity - Web 3.0 real estate
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex  lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
           <li class="text-sm leading-[21px] font-medium">Dashboard</li>
         </ul>
+      </div>
+    
 
 
       </div>
-      <img loading="lazy" src="img/work1.jpg" class="w-full " alt="Bloquty" />
+      <img  src="img/work1.jpg" class="w-full " alt="Bloquty" />
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base  text-center leading-[24px]">
           Canva
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Dashboard</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
-
         </ul>
-        <img src="img/work2.jpg" class="w-full pt-6 lg:mt-12" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work2.jpg" class="w-full pt-6 lg:mt-12" alt="Bloquty" />
       </div>
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           SXM
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-
-          <li class="text-sm leading-[21px] font-medium no-bullet">Landing Pages</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
-
         </ul>
-        <img src="img/work3.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work3.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           The New York Sun
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Web design</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Frontend Development</li>
-
-
         </ul>
-        <img src="img/work4.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work4.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Shoplift
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-
-          <li class="text-sm leading-[21px] font-medium no-bullet">Landing Pages</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex  lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
         </ul>
-        <img src="img/work5.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work5.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Prophet
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex  lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
           <li class="text-sm leading-[21px] font-medium">Dashboard</li>
           <li class="text-sm leading-[21px] font-medium">Frontend development</li>
-
-
-
         </ul>
-        <img src="img/work6.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+      </div>
+        <img loading="lazy" src="img/work6.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Wove
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+
+        <ul class="list-disc lg:flex lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
 
         </ul>
-        <img src="img/work7.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work7.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
 
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Matchr
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+
+        <ul class="list-disc lg:flex  lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Marketing Graphics</li>
         </ul>
-        <img src="img/work8.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img  loading="lazy" src="img/work8.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Xsocial
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
           <li class="text-sm leading-[21px] font-medium">Mobile App</li>
         </ul>
-        <img src="img/work9.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work9.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
 
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Q loop
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Design System</li>
+        <div class="flex items-center justify-center">
+        
+        <ul class="list-disc lg:flex lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Design System</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Animations</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
           <li class="text-sm leading-[21px] font-medium">Dashboard</li>
         </ul>
-        <img src="img/work10.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work10.jpg" class="w-full pt-6 lg:pt-16" alt="Bloquty" />
       </div>
 
       <div class="px-12 lg:px-32 pt-8 lg:pt-20 2xl:pt-16">
         <p class="font-medium text-base text-center leading-[24px]">
           Simplero
         </p>
-        <ul class="list-disc flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-sm leading-[21px] font-medium no-bullet">Landing Pages</li>
+        <div class="flex items-center justify-center">
+        <ul class="list-disc lg:flex flex-col lg:flex-row gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-sm leading-[21px] font-medium lg:no-bullet">Landing Pages</li>
           <li class="text-sm leading-[21px] font-medium">Prototyping</li>
           <li class="text-sm leading-[21px] font-medium">Web App</li>
         </ul>
-        <img src="img/work11.jpg" class="w-full pt-6 pb-8 lg:pb-24 lg:pt-16" alt="Bloquty" />
+        </div>
+        <img loading="lazy" src="img/work11.jpg" class="w-full pt-6 pb-8 lg:pb-24 lg:pt-16" alt="Bloquty" />
       </div>
 
     </div>
@@ -626,7 +641,7 @@
             <h2 class="font-extralight skew-up text-lg md:text-xl lg:text-3xl leading-12">
               Concept
             </h2>
-            <button id="testimonialBox" class="pricingButton !outline-none">
+            <button  class="pricingButton !outline-none">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1223_5867)">
                   <path
@@ -840,14 +855,14 @@
       <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
         <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] ">Design Support</h3>
         <div class="flex items-center w-1/2 justify-end ">
-          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
+          <img  src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
             alt="Bloquty" />
         </div>
       </div>
       <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
-
-        <ul class="list-disc flex  flex-wrap  gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-lg leading-[33px] font-normal no-bullet">Brand Design</li>
+        <div class="flex items-center pb-4 lg:pb-0 justify-center">
+        <ul class="list-disc lg:flex  flex-wrap  gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-lg leading-[33px] font-normal lg:no-bullet">Brand Design</li>
           <li class="text-lg leading-[33px] font-normal">Landing Pages</li>
           <li class="text-lg leading-[33px] font-normal">Mobile apps</li>
           <li class="text-lg leading-[33px] font-normal">Product Design</li>
@@ -857,38 +872,39 @@
           <li class="text-lg leading-[33px] font-normal">One pagers</li>
 
         </ul>
-        <img loading="lazy" src="img/price1.jpg" class="w-full lg:mt-16" alt="Bloquty" />
+        </div>
+        <img  src="img/price1.jpg" class="w-full lg:mt-16" alt="Bloquty" />
 
 
       </div>
       <div class="px-12 lg:px-32 mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/price2.jpg" class="w-full " alt="1" />
+        <img loading="lazy" src="img/price2.jpg" class="w-full " alt="1" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/price3.jpg" class="w-full " alt="2" />
+        <img loading="lazy" src="img/price3.jpg" class="w-full " alt="2" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/price4.jpg" class="w-full " alt="3" />
+        <img loading="lazy" src="img/price4.jpg" class="w-full " alt="3" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/price5.jpg" class="w-full " alt="4" />
+        <img loading="lazy" src="img/price5.jpg" class="w-full " alt="4" />
       </div>
-      <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
+      <div loading="lazy" class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/price6.jpg" class="w-full " alt="5" />
+        <img loading="lazy" src="img/price6.jpg" class="w-full " alt="5" />
       </div>
 
-      <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
+      <div  class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/price8.jpg" class="w-full " alt="7" />
+        <img loading="lazy" src="img/price8.jpg" class="w-full " alt="7" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16 pb-8 lg:pb-16">
 
-        <img src="img/price9.jpg" class="w-full " alt="8" />
+        <img loading="lazy" src="img/price9.jpg" class="w-full " alt="8" />
       </div>
 
 
@@ -902,14 +918,14 @@
       <div class="flex items-center justify-between w-full bg-white fixed p-4  ">
         <h3 class="font-medium text-base lg:text-end w-1/2 lg:ml-14  leading-[24px] ">MVP</h3>
         <div class="flex items-center w-1/2 justify-end ">
-          <img loading="lazy" src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
+          <img  src="img/crossbutton.svg" class="close w-8 h-8 lg:w-auto h-auto pr-2 lg:pr-6"
             alt="Bloquty" />
         </div>
       </div>
       <div class="px-12 lg:px-32 pb-4  lg:pb-28 mt-14  pt-12">
-
-        <ul class="list-disc flex  flex-wrap  gap-x-8 py-2 items-center lg:items-start justify-center">
-          <li class="text-lg leading-[33px] font-normal no-bullet">Requirement Analysis</li>
+        <div class="flex items-center pb-4 lg:pb-0 justify-center">
+        <ul class="list-disc lg:flex  flex-wrap  gap-x-8 py-2 items-center lg:items-start justify-center">
+          <li class="text-lg leading-[33px] font-normal lg:no-bullet">Requirement Analysis</li>
           <li class="text-lg leading-[33px] font-normal">User stories</li>
           <li class="text-lg leading-[33px] font-normal">Sprint Planning</li>
           <li class="text-lg leading-[33px] font-normal">UX Research</li>
@@ -918,24 +934,23 @@
           <li class="text-lg leading-[33px] font-normal">Product Design</li>
           <li class="text-lg leading-[33px] font-normal">Prototyping</li>
           <li class="text-lg leading-[33px] font-normal">User Testing</li>
-
-
         </ul>
-        <img loading="lazy" src="img/mvp1.jpg" class="w-full lg:mt-16" alt="Bloquty" />
+        </div>
+        <img  src="img/mvp1.jpg" class="w-full lg:mt-16" alt="Bloquty" />
 
 
       </div>
       <div class="px-12 lg:px-32 mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/mvp2.jpg" class="w-full " alt="1" />
+        <img loading="lazy" src="img/mvp2.jpg" class="w-full " alt="1" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/mvp3.jpg" class="w-full " alt="2" />
+        <img loading="lazy" src="img/mvp3.jpg" class="w-full " alt="2" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/mvp4.jpg" class="w-full " alt="3" />
+        <img loading="lazy" src="img/mvp4.jpg" class="w-full " alt="3" />
       </div>
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
         <div class=" bg-[url('./img/mvp6.png')] bg-no-repeat bg-cover flex items-center justify-center py-12">
@@ -948,7 +963,7 @@
       
       <div class="px-12 lg:px-32  mt-8 lg:mt-12 xl:mt-16">
 
-        <img src="img/mvp5.jpg" class="w-full " alt="5" />
+        <img loading="lazy" src="img/mvp5.jpg" class="w-full " alt="5" />
       </div>
 
       
