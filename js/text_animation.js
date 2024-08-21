@@ -61,6 +61,7 @@
 // font-family loading
 $(document).ready(function () {
   document.fonts.load('10pt "Bauziet Norm"').then(function () {
+      $('#splash-text').removeClass('hidden'); // Show the text if the font is loaded
       $('.dot').css('opacity', '1');
       gsap.to(".dot", {
           scale: 200,
@@ -79,6 +80,7 @@ $(document).ready(function () {
       }, 1500);
   });
 });
+
 
 // font-family loading end
 
